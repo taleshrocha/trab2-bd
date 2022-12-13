@@ -1,6 +1,7 @@
 CREATE TABLE Pais (
   id SERIAL PRIMARY KEY,
   nome VARCHAR(100) NOT NULL,
+  capital VARCHAR(100),
   area INT NOT NULL,
   tamPopulacao INT,
   PIB FLOAT,
