@@ -4,7 +4,6 @@ CREATE TABLE Pais (
   area INT NOT NULL,
   tamPopulacao INT,
   PIB FLOAT,
-  descricao VARCHAR(1000)
 );
 
 CREATE TABLE Continente (
