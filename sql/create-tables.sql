@@ -1,10 +1,11 @@
 CREATE TABLE Pais (
-  id SERIAL PRIMARY KEY,
+  id SERIAL NOT NULL PRIMARY KEY,
   nome VARCHAR(100) NOT NULL,
-  capital VARCHAR(100),
-  area INT NOT NULL,
-  tamPopulacao INT,
-  PIB FLOAT,
+  populacao BIGINT NOT NULL,
+  area BIGINT NOT NULL,
+  densidadePop BIGINT NOT NULL,
+  capital VARCHAR(100)
+  --PIB FLOAT,
 );
 
 CREATE TABLE Continente (
