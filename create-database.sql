@@ -1010,8 +1010,186 @@ INSERT INTO religion VALUES ('Jewish');
 -- religion_country
 
 -- TODO: só america latina adicionar no religion_country
--- EXEMPLO.
+-- Feito(v)
 INSERT INTO religion_country () VALUES ('Christian','Brazil', 183310550);
+INSERT INTO religion_country () VALUES ('Muslim','Brazil', 40000);
+INSERT INTO religion_country () VALUES ('Irreligion','Brazil', 15401050);
+INSERT INTO religion_country () VALUES ('Hindu','Brazil', 0);
+INSERT INTO religion_country () VALUES ('Buddhist','Brazil', 194950);
+INSERT INTO religion_country () VALUES ('Folk religion','Brazil', 5458600);
+INSERT INTO religion_country () VALUES ('Other religion','Brazil', 389900);
+INSERT INTO religion_country () VALUES ('Jewish','Brazil', 110000);
+
+INSERT INTO religion_country () VALUES ('Christian','Mexico', 107862420);
+INSERT INTO religion_country () VALUES ('Muslim','Mexico', 2000);
+INSERT INTO religion_country () VALUES ('Irreligion','Mexico', 5330740);
+INSERT INTO religion_country () VALUES ('Hindu','Mexico', 0);
+INSERT INTO religion_country () VALUES ('Buddhist','Mexico', 107000);
+INSERT INTO religion_country () VALUES ('Folk religion','Mexico', 70000);
+INSERT INTO religion_country () VALUES ('Other religion','Mexico', 20000);
+INSERT INTO religion_country () VALUES ('Jewish','Mexico', 70000);
+
+INSERT INTO religion_country () VALUES ('Christian','Colombia', 41500000);
+INSERT INTO religion_country () VALUES ('Muslim','Colombia', 100000);
+INSERT INTO religion_country () VALUES ('Irreligion','Colombia', 5500140);
+INSERT INTO religion_country () VALUES ('Hindu','Colombia', 50.000);
+INSERT INTO religion_country () VALUES ('Buddhist','Colombia', 50.000);
+INSERT INTO religion_country () VALUES ('Folk religion','Colombia', 500320);
+INSERT INTO religion_country () VALUES ('Other religion','Colombia', 1.000000);
+INSERT INTO religion_country () VALUES ('Jewish','Colombia', 50.000);
+
+INSERT INTO religion_country () VALUES ('Christian','Argentina', 34429320);
+INSERT INTO religion_country () VALUES ('Muslim','Argentina', 404100);
+INSERT INTO religion_country () VALUES ('Irreligion','Argentina', 4930020);
+INSERT INTO religion_country () VALUES ('Hindu','Argentina', 0);
+INSERT INTO religion_country () VALUES ('Buddhist','Argentina', 20000);
+INSERT INTO religion_country () VALUES ('Folk religion','Argentina', 323280);
+INSERT INTO religion_country () VALUES ('Other religion','Argentina', 121230);
+INSERT INTO religion_country () VALUES ('Jewish','Argentina', 202050);
+
+INSERT INTO religion_country () VALUES ('Christian','Peru', 26753600);
+INSERT INTO religion_country () VALUES ('Muslim','Peru', 0);
+INSERT INTO religion_country () VALUES ('Irreligion','Peru', 1890200);
+INSERT INTO religion_country () VALUES ('Hindu','Peru', 0);
+INSERT INTO religion_country () VALUES ('Buddhist','Peru', 58160);
+INSERT INTO religion_country () VALUES ('Folk religion','Peru', 290800);
+INSERT INTO religion_country () VALUES ('Other religion','Peru', 87240);
+INSERT INTO religion_country () VALUES ('Jewish','Peru', 0);
+
+INSERT INTO religion_country () VALUES ('Christian','Venezuela', 25879140);
+INSERT INTO religion_country () VALUES ('Muslim','Venezuela', 86940);
+INSERT INTO religion_country () VALUES ('Irreligion','Venezuela', 2898000);
+INSERT INTO religion_country () VALUES ('Hindu','Venezuela', 0);
+INSERT INTO religion_country () VALUES ('Buddhist','Venezuela', 0);
+INSERT INTO religion_country () VALUES ('Folk religion','Venezuela', 57960);
+INSERT INTO religion_country () VALUES ('Other religion','Venezuela', 20000);
+INSERT INTO religion_country () VALUES ('Jewish','Venezuela', 0);
+
+INSERT INTO religion_country () VALUES ('Christian','Chile', 15296340);
+INSERT INTO religion_country () VALUES ('Muslim','Chile', 0);
+INSERT INTO religion_country () VALUES ('Irreligion','Chile', 1471460);
+INSERT INTO religion_country () VALUES ('Hindu','Chile', 0);
+INSERT INTO religion_country () VALUES ('Buddhist','Chile', 10000);
+INSERT INTO religion_country () VALUES ('Folk religion','Chile', 256650);
+INSERT INTO religion_country () VALUES ('Other religion','Chile', 34220);
+INSERT INTO religion_country () VALUES ('Jewish','Chile', 17110);
+
+INSERT INTO religion_country () VALUES ('Christian','Guatemala', 13699280);
+INSERT INTO religion_country () VALUES ('Muslim','Guatemala', 0);
+INSERT INTO religion_country () VALUES ('Irreligion','Guatemala', 589990);
+INSERT INTO religion_country () VALUES ('Hindu','Guatemala', 0);
+INSERT INTO religion_country () VALUES ('Buddhist','Guatemala', 0);
+INSERT INTO religion_country () VALUES ('Folk religion','Guatemala', 86340);
+INSERT INTO religion_country () VALUES ('Other religion','Guatemala', 10000);
+INSERT INTO religion_country () VALUES ('Jewish','Guatemala', 0);
+
+INSERT INTO religion_country () VALUES ('Christian','Ecuador', 13606860);
+INSERT INTO religion_country () VALUES ('Muslim','Ecuador', 0);
+INSERT INTO religion_country () VALUES ('Irreligion','Ecuador', 795300);
+INSERT INTO religion_country () VALUES ('Hindu','Ecuador', 0);
+INSERT INTO religion_country () VALUES ('Buddhist','Ecuador', 0);
+INSERT INTO religion_country () VALUES ('Folk religion','Ecuador', 43380);
+INSERT INTO religion_country () VALUES ('Other religion','Ecuador', 0);
+INSERT INTO religion_country () VALUES ('Jewish','Ecuador', 0);
+
+INSERT INTO religion_country () VALUES ('Christian','Bolivia', 9324270);
+INSERT INTO religion_country () VALUES ('Muslim','Bolivia', 0);
+INSERT INTO religion_country () VALUES ('Irreligion','Bolivia', 407130);
+INSERT INTO religion_country () VALUES ('Hindu','Bolivia', 0);
+INSERT INTO religion_country () VALUES ('Buddhist','Bolivia', 0);
+INSERT INTO religion_country () VALUES ('Folk religion','Bolivia', 89470);
+INSERT INTO religion_country () VALUES ('Other religion','Bolivia', 99300);
+INSERT INTO religion_country () VALUES ('Jewish','Bolivia', 0);
+
+INSERT INTO religion_country () VALUES ('Christian','Honduras', 6657600);
+INSERT INTO religion_country () VALUES ('Muslim','Honduras', 7600);
+INSERT INTO religion_country () VALUES ('Irreligion','Honduras', 798000);
+INSERT INTO religion_country () VALUES ('Hindu','Honduras', 0);
+INSERT INTO religion_country () VALUES ('Buddhist','Honduras', 7600);
+INSERT INTO religion_country () VALUES ('Folk religion','Honduras', 83600);
+INSERT INTO religion_country () VALUES ('Other religion','Honduras', 45600);
+INSERT INTO religion_country () VALUES ('Jewish','Honduras', 0);
+
+INSERT INTO religion_country () VALUES ('Christian','Paraguay', 6250050);
+INSERT INTO religion_country () VALUES ('Muslim','Paraguay', 0);
+INSERT INTO religion_country () VALUES ('Irreligion','Paraguay', 70950);
+INSERT INTO religion_country () VALUES ('Hindu','Paraguay', 0);
+INSERT INTO religion_country () VALUES ('Buddhist','Paraguay', 0);
+INSERT INTO religion_country () VALUES ('Folk religion','Paraguay', 109650);
+INSERT INTO religion_country () VALUES ('Other religion','Paraguay', 12900);
+INSERT INTO religion_country () VALUES ('Jewish','Paraguay', 0);
+
+INSERT INTO religion_country () VALUES ('Christian','Nicaragua', 4967820);
+INSERT INTO religion_country () VALUES ('Muslim','Nicaragua', 0);
+INSERT INTO religion_country () VALUES ('Irreligion','Nicaragua', 723750);
+INSERT INTO religion_country () VALUES ('Hindu','Nicaragua', 0);
+INSERT INTO religion_country () VALUES ('Buddhist','Nicaragua', 0);
+INSERT INTO religion_country () VALUES ('Folk religion','Nicaragua', 81060);
+INSERT INTO religion_country () VALUES ('Other religion','Nicaragua', 5790);
+INSERT INTO religion_country () VALUES ('Jewish','Nicaragua', 0);
+
+INSERT INTO religion_country () VALUES ('Christian','El Salvador', 5459580);
+INSERT INTO religion_country () VALUES ('Muslim','El Salvador', 0);
+INSERT INTO religion_country () VALUES ('Irreligion','El Salvador', 680900);
+INSERT INTO religion_country () VALUES ('Hindu','El Salvador', 0);
+INSERT INTO religion_country () VALUES ('Buddhist','El Salvador', 0);
+INSERT INTO religion_country () VALUES ('Folk religion','El Salvador', 30950);
+INSERT INTO religion_country () VALUES ('Other religion','El Salvador', 18570);
+INSERT INTO religion_country () VALUES ('Jewish','El Salvador', 0);
+
+INSERT INTO religion_country () VALUES ('Christian','Costa Rica', 4235940);
+INSERT INTO religion_country () VALUES ('Muslim','Costa Rica', 0);
+INSERT INTO religion_country () VALUES ('Irreligion','Costa Rica', 368140);
+INSERT INTO religion_country () VALUES ('Hindu','Costa Rica', 0);
+INSERT INTO religion_country () VALUES ('Buddhist','Costa Rica', 0);
+INSERT INTO religion_country () VALUES ('Folk religion','Costa Rica', 38280);
+INSERT INTO religion_country () VALUES ('Other religion','Costa Rica', 13980);
+INSERT INTO religion_country () VALUES ('Jewish','Costa Rica', 0);
+
+INSERT INTO religion_country () VALUES ('Christian','Panama', 3273600);
+INSERT INTO religion_country () VALUES ('Muslim','Panama', 24640);
+INSERT INTO religion_country () VALUES ('Irreligion','Panama', 168960);
+INSERT INTO religion_country () VALUES ('Hindu','Panama', 0);
+INSERT INTO religion_country () VALUES ('Buddhist','Panama', 7040);
+INSERT INTO religion_country () VALUES ('Folk religion','Panama', 14080);
+INSERT INTO religion_country () VALUES ('Other religion','Panama', 14080);
+INSERT INTO religion_country () VALUES ('Jewish','Panama', 14080);
+
+INSERT INTO religion_country () VALUES ('Christian','Uruguay', 1951230);
+INSERT INTO religion_country () VALUES ('Muslim','Uruguay', 0);
+INSERT INTO religion_country () VALUES ('Irreligion','Uruguay', 1371590);
+INSERT INTO religion_country () VALUES ('Hindu','Uruguay', 0);
+INSERT INTO religion_country () VALUES ('Buddhist','Uruguay', 0);
+INSERT INTO religion_country () VALUES ('Folk religion','Uruguay', 26960);
+INSERT INTO religion_country () VALUES ('Other religion','Uruguay', 10110);
+INSERT INTO religion_country () VALUES ('Jewish','Uruguay', 10110);
+
+INSERT INTO religion_country () VALUES ('Christian','Guyana', 495000);
+INSERT INTO religion_country () VALUES ('Muslim','Guyana', 48000);
+INSERT INTO religion_country () VALUES ('Irreligion','Guyana', 15000);
+INSERT INTO religion_country () VALUES ('Hindu','Guyana', 236750);
+INSERT INTO religion_country () VALUES ('Buddhist','Guyana', 0);
+INSERT INTO religion_country () VALUES ('Folk religion','Guyana', 1500);
+INSERT INTO religion_country () VALUES ('Other religion','Guyana', 4500);
+INSERT INTO religion_country () VALUES ('Jewish','Guyana', 0);
+
+INSERT INTO religion_country () VALUES ('Christian','Suriname', 268320);
+INSERT INTO religion_country () VALUES ('Muslim','Suriname', 79040);
+INSERT INTO religion_country () VALUES ('Irreligion','Suriname', 28080);
+INSERT INTO religion_country () VALUES ('Hindu','Suriname', 102960);
+INSERT INTO religion_country () VALUES ('Buddhist','Suriname', 3120);
+INSERT INTO religion_country () VALUES ('Folk religion','Suriname', 27560);
+INSERT INTO religion_country () VALUES ('Other religion','Suriname', 9360);
+INSERT INTO religion_country () VALUES ('Jewish','Suriname', 1040);
+
+INSERT INTO religion_country () VALUES ('Christian','Belize', 271560);
+INSERT INTO religion_country () VALUES ('Muslim','Belize', 310);
+INSERT INTO religion_country () VALUES ('Irreligion','Belize', 27590);
+INSERT INTO religion_country () VALUES ('Hindu','Belize', 620);
+INSERT INTO religion_country () VALUES ('Buddhist','Belize', 1550);
+INSERT INTO religion_country () VALUES ('Folk religion','Belize', 4650);
+INSERT INTO religion_country () VALUES ('Other religion','Belize', 310);
+INSERT INTO religion_country () VALUES ('Jewish','Belize', 3100);
 
 INSERT INTO religion () VALUES (17237400, 100000, 973080, 0, 0, 801360, 0, 0); -- Angola
 INSERT INTO religion () VALUES (13778800, 7692300, 1038800, 0, 0, 646800, 529270, 0); -- Cameroon
