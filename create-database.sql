@@ -297,6 +297,7 @@ INSERT INTO head_of_state (name, goverment_type) VALUES ('Emmerson Mnangagwa', '
 -- country
 
 -- TODO: colocar gdp e head_of_state na america latina
+-- Feito(v)
 INSERT INTO country (name, population, area, population_density, capital) VALUES ('Afghanistan', 40099462, 652864, 61, 'Kabul', 'Asia');
 INSERT INTO country (name, population, area, population_density, capital) VALUES ('Albania', 2854710, 28748, 99, 'Tirana', 'Europe');
 INSERT INTO country (name, population, area, population_density, capital) VALUES ('Algeria', 44177969, 2381741, 19, 'Algiers', 'Africa');
@@ -565,6 +566,27 @@ INSERT INTO country (name, population, area, population_density, capital) VALUES
 INSERT INTO country (name, population, area, population_density, capital) VALUES ('Zimbabwe', 15993524, 390757, 41, 'Harare', 'Africa');
 INSERT INTO country (name, population, area, population_density, capital) VALUES ('Åland (Finland)', 30344, 1580, 19, NULL, NULL);
 
+UPDATE country SET gdp = 1894708, head_of_state = 'Jair Bolsonaro' WHERE name = 'Brazil';
+UPDATE country SET gdp = 1424533, head_of_state = 'Andrés Manuel López Obrador'WHERE name = 'Mexico';
+UPDATE country SET gdp = 342919, head_of_state = 'Gustavo Petro' WHERE name = 'Colombia';
+UPDATE country SET gdp = 630698, head_of_state = 'Alberto Fernández' WHERE name = 'Argentina';
+UPDATE country SET gdp = 239333, head_of_state = 'Dina Boluarte' WHERE name = 'Peru';
+UPDATE country SET gdp = 82145, head_of_state = 'Nicolás Maduro' WHERE name = 'Venezuela';
+UPDATE country SET gdp = 310866, head_of_state = 'Gabriel Boric' WHERE name = 'Chile';
+UPDATE country SET gdp = 91318, head_of_state = 'Alejandro Giammattei' WHERE name = 'Guatemala';
+UPDATE country SET gdp = 115469, head_of_state = 'Guillermo Lasso' WHERE name = 'Ecuador';
+UPDATE country SET gdp = 43431, head_of_state = 'Luis Arce' WHERE name = 'Bolivia';
+UPDATE country SET gdp = 30568, head_of_state = 'Xiomara Castro' WHERE name = 'Honduras';
+UPDATE country SET gdp = 41855, head_of_state = 'Mario Abdo Benítez' WHERE name = 'Paraguay';
+UPDATE country SET gdp = 15695, head_of_state = 'Daniel Ortega' WHERE name = 'Nicaragua';
+UPDATE country SET gdp = 31989, head_of_state = 'Nayib Bukele' WHERE name = 'El Salvador';
+UPDATE country SET gdp = 68489, head_of_state = 'Rodrigo Chaves Robles' WHERE name = 'Costa Rica';
+UPDATE country SET gdp = 71085, head_of_state = 'Laurentino Cortizo' WHERE name = 'Panama';
+UPDATE country SET gdp = 71161, head_of_state = 'Luis Lacalle Pou' WHERE name = 'Uruguay';
+UPDATE country SET gdp = 14839, head_of_state = 'Irfaan Ali' WHERE name = 'Guyana';
+UPDATE country SET gdp = 3011, head_of_state = 'Chan Santokhi' WHERE name = 'Suriname';
+UPDATE country SET gdp = 2676, head_of_state = 'Dame Froyla Tzalam' WHERE name = 'Belize';
+
 -- language
 
 INSERT INTO language VALUES ('Abkhaz');
@@ -731,6 +753,32 @@ INSERT INTO language VALUES ('Xhosa');
 INSERT INTO language VALUES ('Yaminawa');
 INSERT INTO language VALUES ('Yuki');
 INSERT INTO language VALUES ('Yuracaré');
+
+INSERT INTO language_country VALUES ('', 'Brazil');
+INSERT INTO language_country VALUES ('', 'Mexico');
+INSERT INTO language_country VALUES ('', 'Colombia');
+INSERT INTO language_country VALUES ('Spanish', 'Argentina');
+INSERT INTO language_country VALUES ('Guaraní', 'Argentina');
+INSERT INTO language_country VALUES ('', 'Argentina');
+INSERT INTO language_country VALUES ('', 'Argentina');
+INSERT INTO language_country VALUES ('', 'Argentina');
+INSERT INTO language_country VALUES ('', 'Argentina');
+INSERT INTO language_country VALUES ('', 'Peru');
+INSERT INTO language_country VALUES ('', 'Venezuela');
+INSERT INTO language_country VALUES ('', 'Chile');
+INSERT INTO language_country VALUES ('', 'Guatemala');
+INSERT INTO language_country VALUES ('', 'Ecuador');
+INSERT INTO language_country VALUES ('', 'Bolivia');
+INSERT INTO language_country VALUES ('', 'Honduras');
+INSERT INTO language_country VALUES ('', 'Paraguay');
+INSERT INTO language_country VALUES ('', 'Nicaragua');
+INSERT INTO language_country VALUES ('', 'El Salvador');
+INSERT INTO language_country VALUES ('', 'Costa Rica');
+INSERT INTO language_country VALUES ('', 'Panama');
+INSERT INTO language_country VALUES ('', 'Uruguay');
+INSERT INTO language_country VALUES ('', 'Guyana');
+INSERT INTO language_country VALUES ('', 'Suriname');
+INSERT INTO language_country VALUES ('', 'Belize');
 
 -- currency
 
