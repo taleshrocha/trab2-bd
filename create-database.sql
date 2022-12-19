@@ -1046,29 +1046,29 @@ INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) 
 
 -- currency_country
 
-INSERT INTO currency_country VALUES ('Brazilian real', 'Brazil');
-INSERT INTO currency_country VALUES ('Mexican peso', 'Mexico');
-INSERT INTO currency_country VALUES ('Colombian peso', 'Colombia');
-INSERT INTO currency_country VALUES ('Argentine peso', 'Argentina');
-INSERT INTO currency_country VALUES ('Peruvian sol', 'Peru');
-INSERT INTO currency_country VALUES ('Venezuelan sovereign bolívar', 'Venezuela');
-INSERT INTO currency_country VALUES ('Venezuelan digital bolívar', 'Venezuela');
-INSERT INTO currency_country VALUES ('Chilean peso', 'Chile');
-INSERT INTO currency_country VALUES ('Guatemalan quetzal', 'Guatemala');
-INSERT INTO currency_country VALUES ('United States dollar', 'Ecuador');
-INSERT INTO currency_country VALUES ('Bolivian boliviano', 'Bolivia');
-INSERT INTO currency_country VALUES ('Honduran lempira', 'Honduras');
-INSERT INTO currency_country VALUES ('Paraguayan guaraní', 'Paraguay');
-INSERT INTO currency_country VALUES ('Nicaraguan córdoba', 'Nicaragua');
-INSERT INTO currency_country VALUES ('United States dollar', 'El Salvador');
-INSERT INTO currency_country VALUES ('Bitcoin', 'El Salvador');
-INSERT INTO currency_country VALUES ('Costa Rican colón', 'Costa Rica');
-INSERT INTO currency_country VALUES ('Panamanian balboa', 'Panama');
-INSERT INTO currency_country VALUES ('United States dollar', 'Panama');
-INSERT INTO currency_country VALUES ('Uruguayan peso', 'Uruguay');
-INSERT INTO currency_country VALUES ('Guyanese dollar', 'Guyana');
-INSERT INTO currency_country VALUES ('Surinamese dollar', 'Suriname');
-INSERT INTO currency_country VALUES ('Belize dollar', 'Belize');
+INSERT INTO currency_country VALUES ('BRL', 'Brazil');
+INSERT INTO currency_country VALUES ('MXN', 'Mexico');
+INSERT INTO currency_country VALUES ('COP', 'Colombia');
+INSERT INTO currency_country VALUES ('ARS', 'Argentina');
+INSERT INTO currency_country VALUES ('PEN', 'Peru');
+INSERT INTO currency_country VALUES ('VES', 'Venezuela');
+INSERT INTO currency_country VALUES ('VED', 'Venezuela');
+INSERT INTO currency_country VALUES ('CLP', 'Chile');
+INSERT INTO currency_country VALUES ('GTQ', 'Guatemala');
+INSERT INTO currency_country VALUES ('USD', 'Ecuador');
+INSERT INTO currency_country VALUES ('BOB', 'Bolivia');
+INSERT INTO currency_country VALUES ('HNL', 'Honduras');
+INSERT INTO currency_country VALUES ('PYG', 'Paraguay');
+INSERT INTO currency_country VALUES ('NIO', 'Nicaragua');
+INSERT INTO currency_country VALUES ('USD', 'El Salvador');
+--INSERT INTO currency_country VALUES ('Bitcoin', 'El Salvador'); NO iso_code
+INSERT INTO currency_country VALUES ('CRC', 'Costa Rica');
+INSERT INTO currency_country VALUES ('PAB', 'Panama');
+INSERT INTO currency_country VALUES ('USD', 'Panama');
+INSERT INTO currency_country VALUES ('UYU', 'Uruguay');
+INSERT INTO currency_country VALUES ('GYD', 'Guyana');
+INSERT INTO currency_country VALUES ('SRD', 'Suriname');
+INSERT INTO currency_country VALUES ('BZD', 'Belize');
 
 -- religion
 
