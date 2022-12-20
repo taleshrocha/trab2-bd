@@ -42,6 +42,7 @@ CREATE TABLE country (
   population_density BIGINT NOT NULL,
   gdp BIGINT,
   capital VARCHAR(100),
+  continent VARCHAR(100) REFERENCES continent,
   head_of_state VARCHAR(100) REFERENCES head_of_state
 );
 
@@ -71,10 +72,11 @@ CREATE TABLE religion_country (
 
 -- continent
 
-INSERT INTO continent VALUES ("America")
-INSERT INTO continent VALUES ("Asia")
-INSERT INTO continent VALUES ("Europe")
-INSERT INTO continent VALUES ("Oceania")
+INSERT INTO continent VALUES ('America');
+INSERT INTO continent VALUES ('Asia');
+INSERT INTO continent VALUES ('Europe');
+INSERT INTO continent VALUES ('Oceania');
+INSERT INTO continent VALUES ('Africa');
 
 -- head_of_state
 
@@ -106,7 +108,6 @@ INSERT INTO head_of_state (name, goverment_type) VALUES ('Jair Bolsonaro', 'Pres
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Hassanal Bolkiah', 'Sultan and Prime Minister'); -- Brunei
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Rumen Radev', 'President'); -- Bulgaria
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Ibrahim Traoré', 'President of the Patriotic Movement for Safeguard and Restoration'); -- Burkina Faso
-INSERT INTO head_of_state (name, goverment_type) VALUES ('Ibrahim Traoré', 'Interim President'); -- Burkina Faso
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Évariste Ndayishimiye', 'President'); -- Burundi
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Norodom Sihamoni', 'King'); -- Cambodia
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Paul Biya', 'President'); -- Cameroon
@@ -116,7 +117,6 @@ INSERT INTO head_of_state (name, goverment_type) VALUES ('Faustin-Archange Touad
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Mahamat Déby', 'Transitional President'); -- Chad
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Gabriel Boric', 'President'); -- Chile
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Xi Jinping', 'General Secretary of the Communist Party'); -- China
-INSERT INTO head_of_state (name, goverment_type) VALUES ('Xi Jinping', 'President'); -- China
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Gustavo Petro', 'President'); -- Colombia
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Azali Assoumani', 'President'); -- Comoros
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Félix Tshisekedi', 'President'); -- Congo, Democratic Republic of the
@@ -125,7 +125,6 @@ INSERT INTO head_of_state (name, goverment_type) VALUES ('Sir Tom Marsters', 'Ki
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Rodrigo Chaves Robles', 'President'); -- Costa Rica
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Zoran Milanović', 'President'); -- Croatia
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Miguel Díaz-Canel', 'First Secretary of the Communist Party'); -- Cuba
-INSERT INTO head_of_state (name, goverment_type) VALUES ('Miguel Díaz-Canel', 'President'); -- Cuba
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Nicos Anastasiades', 'President'); -- Cyprus
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Miloš Zeman', 'President'); -- Czech Republic
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Margrethe II', 'Queen'); -- Denmark
@@ -138,7 +137,6 @@ INSERT INTO head_of_state (name, goverment_type) VALUES ('Abdel Fattah el-Sisi',
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Nayib Bukele', 'President'); -- El Salvador
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Teodoro Obiang Nguema Mbasogo', 'President'); -- Equatorial Guinea
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Isaias Afwerki', 'Chairman of the People''s Front for Democracy and Justice'); -- Eritrea
-INSERT INTO head_of_state (name, goverment_type) VALUES ('Isaias Afwerki', 'President'); -- Eritrea
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Alar Karis', 'President'); -- Estonia
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Mswati III', 'King'); -- Eswatini
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Sahle-Work Zewde', 'President'); -- Ethiopia
@@ -155,7 +153,6 @@ INSERT INTO head_of_state (name, goverment_type) VALUES ('Katerina Sakellaropoul
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Dame Cécile La Grenade', 'Governor-General'); -- Grenada
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Alejandro Giammattei', 'President'); -- Guatemala
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Mamady Doumbouya', 'Chairman of the National Committee of Reconciliation and Development'); -- Guinea
-INSERT INTO head_of_state (name, goverment_type) VALUES ('Mamady Doumbouya', 'Interim President'); -- Guinea
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Umaro Sissoco Embaló', 'President'); -- Guinea-Bissau
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Irfaan Ali', 'President'); -- Guyana
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Ariel Henry', 'Interim President'); -- Haiti
@@ -180,7 +177,6 @@ INSERT INTO head_of_state (name, goverment_type) VALUES ('Vjosa Osmani', 'Presid
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Sheikh Nawaf Al-Ahmad Al-Jaber Al-Sabah', 'Emir'); -- Kuwait
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Sadyr Japarov', 'President'); -- Kyrgyzstan
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Thongloun Sisoulith', 'General Secretary of the People''s Revolutionary Party'); -- Laos
-INSERT INTO head_of_state (name, goverment_type) VALUES ('Thongloun Sisoulith', 'President'); -- Laos
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Egils Levits', 'President'); -- Latvia
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Najib Mikati', 'Acting President'); -- Lebanon
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Letsie III', 'King'); -- Lesotho
@@ -216,9 +212,9 @@ INSERT INTO head_of_state (name, goverment_type) VALUES ('Dame Cindy Kiro', 'Gov
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Daniel Ortega', 'President'); -- Nicaragua
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Mohamed Bazoum', 'President'); -- Niger
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Muhammadu Buhari', 'President'); -- Nigeria
-INSERT INTO head_of_state (name, goverment_type) VALUES ('Dame Cindy Kiro', 'King''s Representative'); -- Niue
+--INSERT INTO head_of_state (name, goverment_type) VALUES ('Dame Cindy Kiro', 'King''s Representative'); -- Niue
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Kim Jong-un', 'General Secretary of the Workers'' Party of Korea'); -- North Korea
-INSERT INTO head_of_state (name, goverment_type) VALUES ('Kim Jong-un', 'President of the State Affairs Commission'); -- North Korea
+--INSERT INTO head_of_state (name, goverment_type) VALUES ('Kim Jong-un', 'President of the State Affairs Commission'); -- North Korea
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Stevo Pendarovski', 'President'); -- North Macedonia
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Ersin Tatar', 'President'); -- Northern Cyprus
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Harald V', 'King'); -- Norway
@@ -239,7 +235,7 @@ INSERT INTO head_of_state (name, goverment_type) VALUES ('Klaus Iohannis', 'Pres
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Vladimir Putin', 'President'); -- Russia
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Paul Kagame', 'President'); -- Rwanda
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Brahim Ghali', 'President'); -- Sahrawi Republic
-INSERT INTO head_of_state (name, goverment_type) VALUES ('Brahim Ghali', 'General Secretary of the Polisario Front'); -- Sahrawi Republic
+--INSERT INTO head_of_state (name, goverment_type) VALUES ('Brahim Ghali', 'General Secretary of the Polisario Front'); -- Sahrawi Republic
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Sir Tapley Seaton', 'Governor-General'); -- Saint Kitts and Nevis
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Errol Charles', 'Governor-General'); -- Saint Lucia
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Dame Susan Dougan', 'Governor-General'); -- Saint Vincent and the Grenadines
@@ -266,7 +262,7 @@ INSERT INTO head_of_state (name, goverment_type) VALUES ('Chan Santokhi', 'Presi
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Carl XVI Gustaf', 'King'); -- Sweden
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Bashar al-Assad', 'President'); -- Switzerland
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Walter Thurnherr', 'Federal Chancellor'); -- Switzerland
-INSERT INTO head_of_state (name, goverment_type) VALUES ('Bashar al-Assad', 'President'); -- Syria
+--INSERT INTO head_of_state (name, goverment_type) VALUES ('Bashar al-Assad', 'President'); -- Syria
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Carlos Vila Nova', 'President'); -- São Tomé and Príncipe
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Emomali Rahmon', 'President'); -- Tajikistan
 INSERT INTO head_of_state (name, goverment_type) VALUES ('Samia Suluhu Hassan', 'President'); -- Tanzania
@@ -298,273 +294,273 @@ INSERT INTO head_of_state (name, goverment_type) VALUES ('Emmerson Mnangagwa', '
 
 -- TODO: colocar gdp e head_of_state na america latina
 -- Feito(v)
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Afghanistan', 40099462, 652864, 61, 'Kabul', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Albania', 2854710, 28748, 99, 'Tirana', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Algeria', 44177969, 2381741, 19, 'Algiers', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('American Samoa (US)', 45035, 199, 226, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Andorra', 79034, 468, 169, 'Andorra la Vella', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Angola', 34503774, 1246700, 28, 'Luanda', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Anguilla (BOT)', 15753, 91, 173, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Antigua and Barbuda', 93219, 442, 211, 'St. John''s (de facto)', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Argentina', 45276780, 2780400, 16, 'Buenos Aires', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Armenia', 2790974, 29743, 94, 'Yerevan', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Artsakh', 120000, 3170, 38, 'Stepanakert', NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Aruba (Netherlands)', 106537, 180, 592, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Australia', 25921089, 7692024, 3, 'Canberra', 'Oceania');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Austria', 8922082, 83871, 106, 'Vienna', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Azerbaijan', 10312992, 86600, 119, 'Baku', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Bahamas', 407906, 13943, 29, 'Nassau', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Bahrain', 1463265, 785, 1864, 'Manama', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Bangladesh', 169356251, 148460, 1141, 'Dhaka', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Barbados', 281200, 430, 654, 'Bridgetown', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Belarus', 9578167, 207600, 46, 'Minsk', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Belgium', 11611419, 30528, 380, 'Brussels', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Belize', 400031, 22966, 17, 'Belmopan', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Benin', 12996895, 114763, 113, 'Porto-Novo (official)', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Benin', 12996895, 114763, 113, 'Cotonou (de facto)', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Bermuda (BOT)', 64185, 53, 1211, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Bhutan', 777486, 38394, 20, 'Thimphu', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Bolivia', 12079472, 1098581, 11, 'Sucre (constitutional)', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Bolivia', 12079472, 1098581, 11, 'La Paz (administrative)', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Bonaire (Netherlands)', 22573, 294, 77, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Bosnia and Herzegovina', 3270943, 51209, 64, 'Sarajevo', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Botswana', 2588423, 582000, 4, 'Gaborone', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Brazil', 214326223, 8514877, 25, 'Brasília', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('British Virgin Islands (BOT)', 31122, 151, 206, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Brunei', 445373, 5765, 77, 'Bandar Seri Begawan', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Bulgaria', 6885868, 110912, 62, 'Sofia', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Burkina Faso', 22100683, 272967, 81, 'Ouagadougou', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Burundi', 12551213, 27834, 451, 'Bujumbura (de facto)', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Burundi', 12551213, 27834, 451, 'Gitega (official)', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Cambodia', 16589023, 181035, 92, 'Phnom Penh', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Cameroon', 27198628, 475650, 57, 'Yaoundé', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Canada', 38155012, 9093507, 4, 'Ottawa', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Cape Verde', 587925, 4033, 146, 'Praia', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Cayman Islands (BOT)', 68136, 264, 258, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Central African Republic', 5457154, 622984, 9, 'Bangui', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Chad', 16244513, 1284000, 13, 'N''Djamena', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Chile', 19493184, 756102, 26, 'Valparaíso (legislative)', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Chile', 19493184, 756102, 26, 'Santiago (official)', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('China', 1425893465, 9596961, 149, 'Beijing', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Christmas Island (Australia)', 1843, 135, 14, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Cocos (Keeling) Islands (Australia)', 544, 14, 39, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Colombia', 51516562, 1141748, 45, 'Bogotá', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Comoros', 821625, 2235, 368, 'Moroni', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Congo', 5835806, 342000, 17, 'Brazzaville', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Cook Islands', 17003, 236, 72, 'Avarua', 'Oceania');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Costa Rica', 5153957, 51100, 101, 'San José', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Croatia', 4060135, 56594, 72, 'Zagreb', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Cuba', 11256372, 109884, 102, 'Havana', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Curaçao (Netherlands)', 190338, 444, 429, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Cyprus', 1244188, 9251, 134, NULL, 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Czech Republic', 10510751, 78866, 133, 'Prague (official legislative and executive)', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Czech Republic', 10510751, 78866, 133, 'Brno (judiciary)', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('DR Congo', 95894118, 2344858, 41, NULL, 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Denmark', 5854240, 43094, 136, 'Copenhagen', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Djibouti', 1105557, 23200, 48, 'Djibouti City', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Dominica', 72412, 751, 96, 'Roseau', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Dominican Republic', 11117873, 48192, 231, 'Santo Domingo', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('East Timor', 1320942, 14919, 89, 'Dili', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Ecuador', 17797737, 256369, 69, 'Quito', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Egypt', 109262178, 1002000, 109, 'Cairo', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('El Salvador', 6314167, 21041, 300, 'San Salvador', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Equatorial Guinea', 1634466, 28051, 58, 'Malabo', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Eritrea', 3620312, 117600, 31, 'Asmara', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Estonia', 1328701, 45227, 29, 'Tallinn', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Eswatini', 1192271, 17363, 69, 'Mbabane (administrative)', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Eswatini', 1192271, 17363, 69, 'Lobamba (royal and legislative)', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Ethiopia', 120283026, 1104300, 109, 'Addis Ababa', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Falkland Islands (BOT)', 3764, 12173, 0.3, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Faroe Islands (Denmark)', 52889, 1393, 38, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Fiji', 926276, 18272, 51, 'Suva', 'Oceania');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Finland', 5535992, 336852, 16, 'Helsinki', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('France', 64531444, 551500, 117, 'Paris', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('French Guiana (France)', 297449, 83534, 4, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('French Polynesia (France)', 304032, 4000, 76, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Gabon', 2341179, 267668, 9, 'Libreville', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Gambia', 2639916, 11295, 234, NULL, 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Georgia', 3688647, 69700, 53, 'Tbilisi', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Germany', 83408554, 357137, 234, 'Berlin', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Ghana', 32833031, 238533, 138, 'Accra', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Gibraltar (BOT)', 32669, 6, 5445, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Greece', 10445365, 131957, 79, 'Athens', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Greenland (Denmark)', 56243, 2166086, 0.03, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Grenada', 124610, 344, 362, 'St. George''s', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Guadeloupe (France)', 396051, 1705, 232, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Guam (US)', 170534, 549, 311, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Guatemala', 17608483, 108889, 162, 'Guatemala City', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Guernsey (Crown Dependency)', 63065, 63, 1001, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Guinea', 13531906, 245857, 55, 'Conakry', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Guinea-Bissau', 2060721, 36125, 57, 'Bissau', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Guyana', 804567, 214969, 4, 'Georgetown', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Haiti', 11447569, 27750, 413, 'Port-au-Prince', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Honduras', 10278345, 112492, 91, 'Tegucigalpa', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Hong Kong', 7494578, 1104, 6789, NULL, 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Hungary', 9709786, 93026, 104, 'Budapest', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Iceland', 370335, 103000, 4, 'Reykjavík', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('India', 1407563842, 3287263, 428, 'New Delhi', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Indonesia', 273753191, 1910931, 143, 'Jakarta', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Iran', 87923432, 1628750, 54, 'Tehran', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Iraq', 43533592, 435244, 100, 'Baghdad', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Ireland', 4986526, 69825, 71, 'Dublin', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Isle of Man (Crown Dependency)', 84263, 572, 147, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Israel', 8900059, 22072, 403, 'Jerusalem', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Italy', 59240329, 301339, 197, 'Rome', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Ivory Coast', 27478249, 322463, 85, 'Yamoussoukro (official)', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Ivory Coast', 27478249, 322463, 85, 'Abidjan (former capital; still has many government offices)', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Jamaica', 2827695, 10991, 257, 'Kingston', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Japan', 124612530, 377930, 330, 'Tokyo', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Jersey (Crown Dependency)', 109618, 116, 945, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Jordan', 11148278, 89328, 125, 'Amman', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Kazakhstan', 19196465, 2724900, 7, 'Astana', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Kenya', 53005614, 591958, 90, 'Nairobi', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Kiribati', 128874, 726, 178, 'South Tarawa', 'Oceania');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Kosovo', 1935259, 10887, 178, 'Pristina', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Kuwait', 4250114, 17818, 239, 'Kuwait City', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Kyrgyzstan', 6527743, 199949, 33, 'Bishkek', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Laos', 7425057, 236800, 31, 'Vientiane', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Latvia', 1873919, 64562, 29, 'Riga', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Lebanon', 5592631, 10452, 535, 'Beirut', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Lesotho', 2281454, 30355, 75, 'Maseru', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Liberia', 5193416, 111369, 47, 'Monrovia', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Libya', 6735277, 1759540, 4, 'Tripoli', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Liechtenstein', 39039, 160, 244, 'Vaduz', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Lithuania', 2786651, 65300, 43, 'Vilnius', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Luxembourg', 639321, 2586, 247, 'Luxembourg', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Macau', 686607, 33, 20806, NULL, 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Madagascar', 28915653, 587295, 49, 'Antananarivo', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Malawi', 19889742, 118484, 168, 'Lilongwe', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Malaysia', 33573874, 330803, 101, 'Kuala Lumpur (official legislative and royal)', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Malaysia', 33573874, 330803, 101, 'Putrajaya (administrative and judicial)', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Maldives', 521457, 300, 1738, 'Malé', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Mali', 21904983, 1240192, 18, 'Bamako', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Malta', 526748, 316, 1667, 'Valletta', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Marshall Islands', 42050, 181, 232, 'Majuro', 'Oceania');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Martinique (France)', 368796, 1128, 327, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Mauritania', 4614974, 1030700, 4, 'Nouakchott', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Mauritius', 1298915, 1969, 660, 'Port Louis', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Mayotte (France)', 316014, 374, 845, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Mexico', 126705138, 1964375, 65, 'Mexico City', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Micronesia', 534606, 702, 762, 'Palikir', 'Oceania');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Moldova', 3061506, 33846, 90, 'Chișinău', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Monaco', 36686, 2, 18343, 'Monaco', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Mongolia', 3347782, 1564116, 2, 'Ulaanbaatar', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Montenegro', 627859, 13812, 45, 'Podgorica (official)', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Montenegro', 627859, 13812, 45, 'Cetinje (Old Royal Capital present seat of the President)', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Montserrat (BOT)', 4417, 103, 43, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Morocco', 37076584, 446550, 83, 'Rabat', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Mozambique', 32077072, 801590, 40, 'Maputo', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Myanmar', 53798084, 676578, 80, 'Naypyidaw', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Namibia', 2530151, 824268, 3, 'Windhoek', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Nauru', 12511, 21, 596, 'Yaren (de facto)', 'Oceania');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Nepal', 30034989, 147181, 204, 'Kathmandu', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Netherlands', 17501696, 33670, 520, 'Amsterdam (official)', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Netherlands', 17501696, 33670, 520, 'The Hague (de facto)', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('New Caledonia (France)', 271407, 18575, 15, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('New Zealand', 5129727, 270467, 19, 'Wellington', 'Oceania');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Nicaragua', 6850540, 130373, 53, 'Managua', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Niger', 25252722, 1267000, 20, 'Niamey', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Nigeria', 213401323, 923768, 231, 'Abuja', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Niue', 1937, 260, 7, 'Alofi', NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Norfolk Island (Australia)', 2188, 36, 61, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('North Korea', 25971909, 120538, 215, 'Pyongyang', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('North Macedonia', 2103330, 25713, 82, 'Skopje', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Northern Cyprus', 382836, 3355, 114, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Northern Mariana Islands (US)', 49481, 457, 108, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Norway', 5403021, 323787, 17, 'Oslo', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Oman', 4520471, 309500, 15, 'Muscat', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Pakistan', 231402117, 881913, 262, 'Islamabad', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Palau', 18024, 459, 39, 'Ngerulmud', 'Oceania');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Palestine', 5133392, 6020, 853, NULL, 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Panama', 4351267, 75417, 58, 'Panama City', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Papua New Guinea', 9949437, 462840, 21, 'Port Moresby', 'Oceania');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Paraguay', 6703799, 406752, 16, 'Asunción', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Peru', 33715471, 1285216, 26, 'Lima', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Philippines', 113880328, 300000, 380, 'Manila', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Pitcairn Islands (BOT)', 47, 5, 9, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Poland', 38307726, 311888, 123, 'Warsaw', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Portugal', 10290103, 92212, 112, 'Lisbon', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Puerto Rico (US)', 3256028, 8870, 367, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Qatar', 2688235, 11607, 232, 'Doha', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Romania', 19328560, 238391, 81, 'Bucharest', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Russia', 145102755, 17098246, 8, 'Moscow', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Rwanda', 13461888, 26338, 511, 'Kigali', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Réunion (France)', 966129, 2513, 384, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Saba (Netherlands)', 1911, 13, 147, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Saint Barthélemy (France)', 10861, 25, 434, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Saint Helena Ascension and Tristan da Cunha (BOT)', 5404, 394, 14, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Saint Kitts and Nevis', 47606, 261, 182, 'Basseterre', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Saint Lucia', 179651, 539, 333, 'Castries', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Saint Martin (France)', 31948, 54, 592, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Saint Pierre and Miquelon (France)', 5883, 242, 24, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Saint Vincent and the Grenadines', 104332, 389, 268, 'Kingstown', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Samoa', 218764, 2842, 77, 'Apia', 'Oceania');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('San Marino', 33745, 61, 553, 'San Marino', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Saudi Arabia', 35950396, 2149690, 17, 'Riyadh', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Senegal', 16876720, 196712, 86, 'Dakar', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Serbia', 7296769, 88361, 83, 'Belgrade', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Seychelles', 106471, 456, 233, 'Victoria', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Sierra Leone', 8420641, 72300, 116, 'Freetown', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Singapore', 5453600, 716, 7617, 'Singapore', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Sint Eustatius (Netherlands)', 3242, 21, 154, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Sint Maarten (Netherlands)', 44042, 34, 1295, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Slovakia', 5447622, 49036, 111, 'Bratislava', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Slovenia', 2119410, 20420, 104, 'Ljubljana', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Solomon Islands', 707851, 28896, 24, 'Honiara', 'Oceania');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Somalia', 17065581, 637657, 27, 'Mogadishu', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('South Africa', 59392255, 1221037, 49, 'Bloemfontein (judicial)', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('South Africa', 59392255, 1221037, 49, 'Pretoria (executive)', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('South Africa', 59392255, 1221037, 49, 'Cape Town (legislative)', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('South Korea', 51830139, 100148, 518, 'Seoul', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('South Korea', 51830139, 100148, 518, 'Sejong City (de facto)', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('South Sudan', 10748272, 644329, 17, 'Juba', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Spain', 47486935, 505992, 94, 'Madrid', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Sri Lanka', 21773441, 65610, 332, 'Colombo (executive judicial)', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Sri Lanka', 21773441, 65610, 332, 'Sri Jayawardenepura Kotte (official)', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Sudan', 45657202, 1861484, 25, 'Khartoum', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Suriname', 612985, 163820, 4, 'Paramaribo', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Svalbard and Jan Mayen (Norway)', 2939, 62422, 0.05, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Sweden', 10467097, 450295, 23, 'Stockholm', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Switzerland', 8691406, 41285, 211, 'Bern (de facto)', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Syria', 21324367, 185180, 115, 'Damascus', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('São Tomé and Príncipe', 223107, 964, 231, 'São Tomé', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Taiwan', 23859912, 36193, 659, 'Taipei', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Tajikistan', 9750064, 143100, 68, 'Dushanbe', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Tanzania', 63588334, 947303, 67, 'Dar es Salaam (de facto judicial)', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Tanzania', 63588334, 947303, 67, 'Dodoma (official legislative)', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Thailand', 71601103, 513120, 140, 'Bangkok', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Togo', 8644829, 56785, 152, 'Lomé', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Tokelau (NZ)', 1849, 12, 154, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Tonga', 106017, 747, 142, 'Nukuʻalofa', 'Oceania');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Transnistria', 347251, 4163, 83, 'Tiraspol', NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Trinidad and Tobago', 1525663, 5130, 297, 'Port of Spain', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Tunisia', 12262946, 163610, 75, 'Tunis', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Turkey', 84775404, 783562, 108, 'Ankara', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Turkmenistan', 6341855, 488100, 13, 'Ashgabat', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Turks and Caicos Islands (BOT)', 45114, 948, 48, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Tuvalu', 11204, 26, 431, 'Funafuti', 'Oceania');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('U.S. Virgin Islands (US)', 100091, 347, 288, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Uganda', 45853778, 241550, 190, 'Kampala', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Ukraine', 43531422, 603500, 72, 'Kyiv', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('United Arab Emirates', 9365145, 83600, 112, 'Abu Dhabi', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('United Kingdom', 67281039, 242495, 277, 'London', 'Europe');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('United States', 336997624, 9629091, 35, 'Washington D.C.', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Uruguay', 3426260, 176215, 19, 'Montevideo', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Uzbekistan', 34081449, 447400, 76, 'Tashkent', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Vanuatu', 319137, 12189, 26, 'Port Vila', 'Oceania');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Vatican City', 511, 0, 1043, 'Vatican City', NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Venezuela', 28199867, 912050, 31, 'Caracas', 'Americas');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Vietnam', 97468029, 330957, 295, 'Hanoi', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Wallis and Futuna (France)', 11627, 142, 82, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Western Sahara', 565581, 266000, 2, 'Laâyoune (declared)', NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Western Sahara', 565581, 266000, 2, 'Tifariti (de facto)', NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('World (all land)', 7998420000, 148940000, 54, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('World (excluding Antarctica)', 7998420000, 134740000, 59, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Yemen', 32981641, 527968, 62, 'Aden (de facto temporary)', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Yemen', 32981641, 527968, 62, 'Sana''a (de jure)', 'Asia');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Zambia', 19473125, 752612, 26, 'Lusaka', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Zimbabwe', 15993524, 390757, 41, 'Harare', 'Africa');
-INSERT INTO country (name, population, area, population_density, capital) VALUES ('Åland (Finland)', 30344, 1580, 19, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Afghanistan', 40099462, 652864, 61, 'Kabul', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Albania', 2854710, 28748, 99, 'Tirana', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Algeria', 44177969, 2381741, 19, 'Algiers', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('American Samoa (US)', 45035, 199, 226, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Andorra', 79034, 468, 169, 'Andorra la Vella', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Angola', 34503774, 1246700, 28, 'Luanda', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Anguilla (BOT)', 15753, 91, 173, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Antigua and Barbuda', 93219, 442, 211, 'St. John''s (de facto)', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Argentina', 45276780, 2780400, 16, 'Buenos Aires', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Armenia', 2790974, 29743, 94, 'Yerevan', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Artsakh', 120000, 3170, 38, 'Stepanakert', NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Aruba (Netherlands)', 106537, 180, 592, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Australia', 25921089, 7692024, 3, 'Canberra', 'Oceania');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Austria', 8922082, 83871, 106, 'Vienna', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Azerbaijan', 10312992, 86600, 119, 'Baku', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Bahamas', 407906, 13943, 29, 'Nassau', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Bahrain', 1463265, 785, 1864, 'Manama', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Bangladesh', 169356251, 148460, 1141, 'Dhaka', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Barbados', 281200, 430, 654, 'Bridgetown', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Belarus', 9578167, 207600, 46, 'Minsk', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Belgium', 11611419, 30528, 380, 'Brussels', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Belize', 400031, 22966, 17, 'Belmopan', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Benin', 12996895, 114763, 113, 'Porto-Novo (official)', 'Africa');
+--INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Benin', 12996895, 114763, 113, 'Cotonou (de facto)', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Bermuda (BOT)', 64185, 53, 1211, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Bhutan', 777486, 38394, 20, 'Thimphu', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Bolivia', 12079472, 1098581, 11, 'Sucre (constitutional)', 'America');
+--INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Bolivia', 12079472, 1098581, 11, 'La Paz (administrative)', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Bonaire (Netherlands)', 22573, 294, 77, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Bosnia and Herzegovina', 3270943, 51209, 64, 'Sarajevo', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Botswana', 2588423, 582000, 4, 'Gaborone', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Brazil', 214326223, 8514877, 25, 'Brasília', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('British Virgin Islands (BOT)', 31122, 151, 206, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Brunei', 445373, 5765, 77, 'Bandar Seri Begawan', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Bulgaria', 6885868, 110912, 62, 'Sofia', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Burkina Faso', 22100683, 272967, 81, 'Ouagadougou', 'Africa');
+--INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Burundi', 12551213, 27834, 451, 'Bujumbura (de facto)', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Burundi', 12551213, 27834, 451, 'Gitega (official)', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Cambodia', 16589023, 181035, 92, 'Phnom Penh', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Cameroon', 27198628, 475650, 57, 'Yaoundé', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Canada', 38155012, 9093507, 4, 'Ottawa', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Cape Verde', 587925, 4033, 146, 'Praia', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Cayman Islands (BOT)', 68136, 264, 258, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Central African Republic', 5457154, 622984, 9, 'Bangui', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Chad', 16244513, 1284000, 13, 'N''Djamena', 'Africa');
+--INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Chile', 19493184, 756102, 26, 'Valparaíso (legislative)', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Chile', 19493184, 756102, 26, 'Santiago (official)', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('China', 1425893465, 9596961, 149, 'Beijing', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Christmas Island (Australia)', 1843, 135, 14, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Cocos (Keeling) Islands (Australia)', 544, 14, 39, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Colombia', 51516562, 1141748, 45, 'Bogotá', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Comoros', 821625, 2235, 368, 'Moroni', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Congo', 5835806, 342000, 17, 'Brazzaville', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Cook Islands', 17003, 236, 72, 'Avarua', 'Oceania');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Costa Rica', 5153957, 51100, 101, 'San José', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Croatia', 4060135, 56594, 72, 'Zagreb', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Cuba', 11256372, 109884, 102, 'Havana', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Curaçao (Netherlands)', 190338, 444, 429, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Cyprus', 1244188, 9251, 134, NULL, 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Czech Republic', 10510751, 78866, 133, 'Prague (official legislative and executive)', 'Europe');
+--INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Czech Republic', 10510751, 78866, 133, 'Brno (judiciary)', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('DR Congo', 95894118, 2344858, 41, NULL, 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Denmark', 5854240, 43094, 136, 'Copenhagen', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Djibouti', 1105557, 23200, 48, 'Djibouti City', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Dominica', 72412, 751, 96, 'Roseau', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Dominican Republic', 11117873, 48192, 231, 'Santo Domingo', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('East Timor', 1320942, 14919, 89, 'Dili', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Ecuador', 17797737, 256369, 69, 'Quito', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Egypt', 109262178, 1002000, 109, 'Cairo', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('El Salvador', 6314167, 21041, 300, 'San Salvador', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Equatorial Guinea', 1634466, 28051, 58, 'Malabo', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Eritrea', 3620312, 117600, 31, 'Asmara', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Estonia', 1328701, 45227, 29, 'Tallinn', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Eswatini', 1192271, 17363, 69, 'Mbabane (administrative)', 'Africa');
+--INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Eswatini', 1192271, 17363, 69, 'Lobamba (royal and legislative)', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Ethiopia', 120283026, 1104300, 109, 'Addis Ababa', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Falkland Islands (BOT)', 3764, 12173, 0.3, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Faroe Islands (Denmark)', 52889, 1393, 38, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Fiji', 926276, 18272, 51, 'Suva', 'Oceania');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Finland', 5535992, 336852, 16, 'Helsinki', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('France', 64531444, 551500, 117, 'Paris', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('French Guiana (France)', 297449, 83534, 4, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('French Polynesia (France)', 304032, 4000, 76, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Gabon', 2341179, 267668, 9, 'Libreville', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Gambia', 2639916, 11295, 234, NULL, 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Georgia', 3688647, 69700, 53, 'Tbilisi', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Germany', 83408554, 357137, 234, 'Berlin', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Ghana', 32833031, 238533, 138, 'Accra', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Gibraltar (BOT)', 32669, 6, 5445, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Greece', 10445365, 131957, 79, 'Athens', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Greenland (Denmark)', 56243, 2166086, 0.03, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Grenada', 124610, 344, 362, 'St. George''s', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Guadeloupe (France)', 396051, 1705, 232, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Guam (US)', 170534, 549, 311, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Guatemala', 17608483, 108889, 162, 'Guatemala City', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Guernsey (Crown Dependency)', 63065, 63, 1001, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Guinea', 13531906, 245857, 55, 'Conakry', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Guinea-Bissau', 2060721, 36125, 57, 'Bissau', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Guyana', 804567, 214969, 4, 'Georgetown', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Haiti', 11447569, 27750, 413, 'Port-au-Prince', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Honduras', 10278345, 112492, 91, 'Tegucigalpa', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Hong Kong', 7494578, 1104, 6789, NULL, 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Hungary', 9709786, 93026, 104, 'Budapest', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Iceland', 370335, 103000, 4, 'Reykjavík', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('India', 1407563842, 3287263, 428, 'New Delhi', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Indonesia', 273753191, 1910931, 143, 'Jakarta', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Iran', 87923432, 1628750, 54, 'Tehran', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Iraq', 43533592, 435244, 100, 'Baghdad', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Ireland', 4986526, 69825, 71, 'Dublin', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Isle of Man (Crown Dependency)', 84263, 572, 147, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Israel', 8900059, 22072, 403, 'Jerusalem', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Italy', 59240329, 301339, 197, 'Rome', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Ivory Coast', 27478249, 322463, 85, 'Yamoussoukro (official)', 'Africa');
+--INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Ivory Coast', 27478249, 322463, 85, 'Abidjan (former capital; still has many government offices)', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Jamaica', 2827695, 10991, 257, 'Kingston', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Japan', 124612530, 377930, 330, 'Tokyo', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Jersey (Crown Dependency)', 109618, 116, 945, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Jordan', 11148278, 89328, 125, 'Amman', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Kazakhstan', 19196465, 2724900, 7, 'Astana', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Kenya', 53005614, 591958, 90, 'Nairobi', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Kiribati', 128874, 726, 178, 'South Tarawa', 'Oceania');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Kosovo', 1935259, 10887, 178, 'Pristina', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Kuwait', 4250114, 17818, 239, 'Kuwait City', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Kyrgyzstan', 6527743, 199949, 33, 'Bishkek', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Laos', 7425057, 236800, 31, 'Vientiane', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Latvia', 1873919, 64562, 29, 'Riga', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Lebanon', 5592631, 10452, 535, 'Beirut', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Lesotho', 2281454, 30355, 75, 'Maseru', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Liberia', 5193416, 111369, 47, 'Monrovia', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Libya', 6735277, 1759540, 4, 'Tripoli', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Liechtenstein', 39039, 160, 244, 'Vaduz', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Lithuania', 2786651, 65300, 43, 'Vilnius', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Luxembourg', 639321, 2586, 247, 'Luxembourg', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Macau', 686607, 33, 20806, NULL, 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Madagascar', 28915653, 587295, 49, 'Antananarivo', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Malawi', 19889742, 118484, 168, 'Lilongwe', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Malaysia', 33573874, 330803, 101, 'Kuala Lumpur (official legislative and royal)', 'Asia');
+--INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Malaysia', 33573874, 330803, 101, 'Putrajaya (administrative and judicial)', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Maldives', 521457, 300, 1738, 'Malé', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Mali', 21904983, 1240192, 18, 'Bamako', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Malta', 526748, 316, 1667, 'Valletta', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Marshall Islands', 42050, 181, 232, 'Majuro', 'Oceania');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Martinique (France)', 368796, 1128, 327, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Mauritania', 4614974, 1030700, 4, 'Nouakchott', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Mauritius', 1298915, 1969, 660, 'Port Louis', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Mayotte (France)', 316014, 374, 845, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Mexico', 126705138, 1964375, 65, 'Mexico City', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Micronesia', 534606, 702, 762, 'Palikir', 'Oceania');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Moldova', 3061506, 33846, 90, 'Chișinău', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Monaco', 36686, 2, 18343, 'Monaco', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Mongolia', 3347782, 1564116, 2, 'Ulaanbaatar', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Montenegro', 627859, 13812, 45, 'Podgorica (official)', 'Europe');
+--INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Montenegro', 627859, 13812, 45, 'Cetinje (Old Royal Capital present seat of the President)', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Montserrat (BOT)', 4417, 103, 43, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Morocco', 37076584, 446550, 83, 'Rabat', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Mozambique', 32077072, 801590, 40, 'Maputo', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Myanmar', 53798084, 676578, 80, 'Naypyidaw', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Namibia', 2530151, 824268, 3, 'Windhoek', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Nauru', 12511, 21, 596, 'Yaren (de facto)', 'Oceania');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Nepal', 30034989, 147181, 204, 'Kathmandu', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Netherlands', 17501696, 33670, 520, 'Amsterdam (official)', 'Europe');
+--INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Netherlands', 17501696, 33670, 520, 'The Hague (de facto)', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('New Caledonia (France)', 271407, 18575, 15, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('New Zealand', 5129727, 270467, 19, 'Wellington', 'Oceania');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Nicaragua', 6850540, 130373, 53, 'Managua', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Niger', 25252722, 1267000, 20, 'Niamey', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Nigeria', 213401323, 923768, 231, 'Abuja', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Niue', 1937, 260, 7, 'Alofi', NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Norfolk Island (Australia)', 2188, 36, 61, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('North Korea', 25971909, 120538, 215, 'Pyongyang', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('North Macedonia', 2103330, 25713, 82, 'Skopje', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Northern Cyprus', 382836, 3355, 114, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Northern Mariana Islands (US)', 49481, 457, 108, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Norway', 5403021, 323787, 17, 'Oslo', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Oman', 4520471, 309500, 15, 'Muscat', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Pakistan', 231402117, 881913, 262, 'Islamabad', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Palau', 18024, 459, 39, 'Ngerulmud', 'Oceania');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Palestine', 5133392, 6020, 853, NULL, 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Panama', 4351267, 75417, 58, 'Panama City', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Papua New Guinea', 9949437, 462840, 21, 'Port Moresby', 'Oceania');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Paraguay', 6703799, 406752, 16, 'Asunción', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Peru', 33715471, 1285216, 26, 'Lima', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Philippines', 113880328, 300000, 380, 'Manila', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Pitcairn Islands (BOT)', 47, 5, 9, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Poland', 38307726, 311888, 123, 'Warsaw', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Portugal', 10290103, 92212, 112, 'Lisbon', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Puerto Rico (US)', 3256028, 8870, 367, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Qatar', 2688235, 11607, 232, 'Doha', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Romania', 19328560, 238391, 81, 'Bucharest', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Russia', 145102755, 17098246, 8, 'Moscow', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Rwanda', 13461888, 26338, 511, 'Kigali', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Réunion (France)', 966129, 2513, 384, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Saba (Netherlands)', 1911, 13, 147, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Saint Barthélemy (France)', 10861, 25, 434, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Saint Helena Ascension and Tristan da Cunha (BOT)', 5404, 394, 14, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Saint Kitts and Nevis', 47606, 261, 182, 'Basseterre', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Saint Lucia', 179651, 539, 333, 'Castries', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Saint Martin (France)', 31948, 54, 592, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Saint Pierre and Miquelon (France)', 5883, 242, 24, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Saint Vincent and the Grenadines', 104332, 389, 268, 'Kingstown', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Samoa', 218764, 2842, 77, 'Apia', 'Oceania');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('San Marino', 33745, 61, 553, 'San Marino', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Saudi Arabia', 35950396, 2149690, 17, 'Riyadh', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Senegal', 16876720, 196712, 86, 'Dakar', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Serbia', 7296769, 88361, 83, 'Belgrade', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Seychelles', 106471, 456, 233, 'Victoria', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Sierra Leone', 8420641, 72300, 116, 'Freetown', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Singapore', 5453600, 716, 7617, 'Singapore', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Sint Eustatius (Netherlands)', 3242, 21, 154, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Sint Maarten (Netherlands)', 44042, 34, 1295, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Slovakia', 5447622, 49036, 111, 'Bratislava', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Slovenia', 2119410, 20420, 104, 'Ljubljana', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Solomon Islands', 707851, 28896, 24, 'Honiara', 'Oceania');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Somalia', 17065581, 637657, 27, 'Mogadishu', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('South Africa', 59392255, 1221037, 49, 'Bloemfontein (judicial)', 'Africa');
+--INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('South Africa', 59392255, 1221037, 49, 'Pretoria (executive)', 'Africa');
+--INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('South Africa', 59392255, 1221037, 49, 'Cape Town (legislative)', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('South Korea', 51830139, 100148, 518, 'Seoul', 'Asia');
+--INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('South Korea', 51830139, 100148, 518, 'Sejong City (de facto)', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('South Sudan', 10748272, 644329, 17, 'Juba', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Spain', 47486935, 505992, 94, 'Madrid', 'Europe');
+--INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Sri Lanka', 21773441, 65610, 332, 'Colombo (executive judicial)', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Sri Lanka', 21773441, 65610, 332, 'Sri Jayawardenepura Kotte (official)', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Sudan', 45657202, 1861484, 25, 'Khartoum', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Suriname', 612985, 163820, 4, 'Paramaribo', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Svalbard and Jan Mayen (Norway)', 2939, 62422, 0.05, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Sweden', 10467097, 450295, 23, 'Stockholm', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Switzerland', 8691406, 41285, 211, 'Bern (de facto)', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Syria', 21324367, 185180, 115, 'Damascus', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('São Tomé and Príncipe', 223107, 964, 231, 'São Tomé', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Taiwan', 23859912, 36193, 659, 'Taipei', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Tajikistan', 9750064, 143100, 68, 'Dushanbe', 'Asia');
+--INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Tanzania', 63588334, 947303, 67, 'Dar es Salaam (de facto judicial)', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Tanzania', 63588334, 947303, 67, 'Dodoma (official legislative)', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Thailand', 71601103, 513120, 140, 'Bangkok', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Togo', 8644829, 56785, 152, 'Lomé', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Tokelau (NZ)', 1849, 12, 154, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Tonga', 106017, 747, 142, 'Nukuʻalofa', 'Oceania');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Transnistria', 347251, 4163, 83, 'Tiraspol', NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Trinidad and Tobago', 1525663, 5130, 297, 'Port of Spain', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Tunisia', 12262946, 163610, 75, 'Tunis', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Turkey', 84775404, 783562, 108, 'Ankara', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Turkmenistan', 6341855, 488100, 13, 'Ashgabat', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Turks and Caicos Islands (BOT)', 45114, 948, 48, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Tuvalu', 11204, 26, 431, 'Funafuti', 'Oceania');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('U.S. Virgin Islands (US)', 100091, 347, 288, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Uganda', 45853778, 241550, 190, 'Kampala', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Ukraine', 43531422, 603500, 72, 'Kyiv', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('United Arab Emirates', 9365145, 83600, 112, 'Abu Dhabi', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('United Kingdom', 67281039, 242495, 277, 'London', 'Europe');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('United States', 336997624, 9629091, 35, 'Washington D.C.', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Uruguay', 3426260, 176215, 19, 'Montevideo', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Uzbekistan', 34081449, 447400, 76, 'Tashkent', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Vanuatu', 319137, 12189, 26, 'Port Vila', 'Oceania');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Vatican City', 511, 0, 1043, 'Vatican City', NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Venezuela', 28199867, 912050, 31, 'Caracas', 'America');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Vietnam', 97468029, 330957, 295, 'Hanoi', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Wallis and Futuna (France)', 11627, 142, 82, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Western Sahara', 565581, 266000, 2, 'Laâyoune (declared)', NULL);
+--INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Western Sahara', 565581, 266000, 2, 'Tifariti (de facto)', NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('World (all land)', 7998420000, 148940000, 54, NULL, NULL);
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('World (excluding Antarctica)', 7998420000, 134740000, 59, NULL, NULL);
+--INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Yemen', 32981641, 527968, 62, 'Aden (de facto temporary)', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Yemen', 32981641, 527968, 62, 'Sana''a (de jure)', 'Asia');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Zambia', 19473125, 752612, 26, 'Lusaka', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Zimbabwe', 15993524, 390757, 41, 'Harare', 'Africa');
+INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Åland (Finland)', 30344, 1580, 19, NULL, NULL);
 
 UPDATE country SET gdp = 1894708, head_of_state = 'Jair Bolsonaro' WHERE name = 'Brazil';
 UPDATE country SET gdp = 1424533, head_of_state = 'Andrés Manuel López Obrador'WHERE name = 'Mexico';
@@ -789,25 +785,25 @@ INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) 
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Albanian lek', 'Lek', 'ALL', 'Qintar', 100); -- Albania
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sterling', '£', 'GBP', 'Penny', 100); -- Alderney
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Algerian dinar', 'DA', 'DZD', 'Santeem', 100); -- Algeria
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Andorra
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Andorra
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Angolan kwanza', 'Kz', 'AOA', 'Cêntimo', 100); -- Angola
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Eastern Caribbean dollar', '$', 'XCD', 'Cent', 100); -- Anguilla
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Eastern Caribbean dollar', '$', 'XCD', 'Cent', 100); -- Antigua and Barbuda
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Eastern Caribbean dollar', '$', 'XCD', 'Cent', 100); -- Antigua and Barbuda
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Argentine peso', '$', 'ARS', 'Centavo', 100); -- Argentina
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Armenian dram', '֏', 'AMD', 'Luma', 100); -- Armenia
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Armenian dram', '֏', 'AMD', 'Luma', 100); -- Artsakh
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Artsakh dram', 'դր.', NULL, 'Luma', 100); -- Artsakh
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Armenian dram', '֏', 'AMD', 'Luma', 100); -- Artsakh
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Artsakh dram', 'դր.', NULL, 'Luma', 100); -- Artsakh
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Aruban florin', 'ƒ', 'AWG', 'Cent', 100); -- Aruba
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Saint Helena pound', '£', 'SHP', 'Penny', 100); -- Ascension Island
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Australian dollar', '$', 'AUD', 'Cent', 100); -- Australia
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Austria
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Austria
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Azerbaijani manat', '₼', 'AZN', 'Qəpik', 100); -- Azerbaijan
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Bahamian dollar', '$', 'BSD', 'Cent', 100); -- Bahamas, The
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Bahraini dinar', 'BD', 'BHD', 'Fils', 1000); -- Bahrain
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Bangladeshi taka', '৳', 'BDT', 'Poisha', 100); -- Bangladesh
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Barbadian dollar', '$', 'BBD', 'Cent', 100); -- Barbados
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Belarusian rubel', 'Rbl or Rbls (pl.)', 'BYN', 'Copeck', 100); -- Belarus
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Belgium
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Belgium
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Belize dollar', '$', 'BZD', 'Cent', 100); -- Belize
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('West African CFA franc', 'Fr', 'XOF', 'Centime', 100); -- Benin
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Bermudian dollar', '$', 'BMD', 'Cent', 100); -- Bermuda
@@ -818,72 +814,72 @@ INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) 
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Bosnia and Herzegovina convertible mark', 'KM', 'BAM', 'Fening', 100); -- Bosnia and Herzegovina
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Botswana pula', 'P', 'BWP', 'Thebe', 100); -- Botswana
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Brazilian real', 'R$', 'BRL', 'Centavo', 100); -- Brazil
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- British Indian Ocean Territory
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- British Virgin Islands
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- British Indian Ocean Territory
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- British Virgin Islands
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Brunei dollar', '$', 'BND', 'Sen', 100); -- Brunei
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Singapore dollar', '$', 'SGD', 'Cent', 100); -- Brunei
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Bulgarian lev', 'Lev', 'BGN', 'Stotinka', 100); -- Bulgaria
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('West African CFA franc', 'Fr', 'XOF', 'Centime', 100); -- Burkina Faso
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('West African CFA franc', 'Fr', 'XOF', 'Centime', 100); -- Burkina Faso
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Burundian franc', 'Fr', 'BIF', 'Centime', 100); -- Burundi
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Cambodian riel', 'CR', 'KHR', 'Sen', 100); -- Cambodia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Central African CFA franc', 'Fr', 'XAF', 'Centime', 100); -- Cameroon
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Canadian dollar', '$', 'CAD', 'Cent', 100); -- Canada
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Cape Verdean escudo', '$', 'CVE', 'Centavo', 100); -- Cape Verde
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Cayman Islands dollar', '$', 'KYD', 'Cent', 100); -- Cayman Islands
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Bitcoin (as legal tender)', '₿', NULL, 'Satoshi', 100000000); -- Central African Republic
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Central African CFA franc', 'Fr', 'XAF', 'Centime', 100); -- Central African Republic
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Central African CFA franc', 'Fr', 'XAF', 'Centime', 100); -- Chad
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Bitcoin (as legal tender)', '₿', NULL, 'Satoshi', 100000000); -- Central African Republic
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Central African CFA franc', 'Fr', 'XAF', 'Centime', 100); -- Central African Republic
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Central African CFA franc', 'Fr', 'XAF', 'Centime', 100); -- Chad
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Chilean peso', '$', 'CLP', 'Centavo', 100); -- Chile
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Republic of', 'Renminbi', '¥', 'CNY', 'Jiao', 10); -- China, People
+INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Republic of Renminbi', '¥', 'CNY', 'Jiao', 10); -- China, People
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Colombian peso', '$', 'COP', 'Centavo', 100); -- Colombia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Comorian franc', 'Fr', 'KMF', 'Centime', 100); -- Comoros
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Congolese franc', 'Fr', 'CDF', 'Centime', 100); -- Congo, Democratic Republic of the
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Central African CFA franc', 'Fr', 'XAF', 'Centime', 100); -- Congo, Republic of the
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Cook Islands dollar', '$', NULL, 'Cent', 100); -- Cook Islands
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Central African CFA franc', 'Fr', 'XAF', 'Centime', 100); -- Congo, Republic of the
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Cook Islands dollar', '$', NULL, 'Cent', 100); -- Cook Islands
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('New Zealand dollar', '$', 'NZD', 'Cent', 100); -- Cook Islands
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Costa Rican colón', '₡', 'CRC', 'Céntimo', 100); -- Costa Rica
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Croatian kuna', 'kn', 'HRK', 'Lipa', 100); -- Croatia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Cuban peso', '$', 'CUP', 'Centavo', 100); -- Cuba
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Netherlands Antillean guilder', 'ƒ', 'ANG', 'Cent', 100); -- Curaçao
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Cyprus
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Cyprus
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Czech koruna', 'Kč', 'CZK', 'Heller', 100); -- Czech Republic
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('West African CFA franc', 'Fr', 'XOF', 'Centime', 100); -- Côte d voire
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('West African CFA franc', 'Fr', 'XOF', 'Centime', 100); -- Côte d voire
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Danish krone', 'kr', 'DKK', 'Øre', 100); -- Denmark
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Djiboutian franc', 'Fr', 'DJF', 'Centime', 100); -- Djibouti
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Eastern Caribbean dollar', '$', 'XCD', 'Cent', 100); -- Dominica
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Eastern Caribbean dollar', '$', 'XCD', 'Cent', 100); -- Dominica
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Dominican peso', '$', 'DOP', 'Centavo', 100); -- Dominican Republic
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Centavo', 100); -- East Timor
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Centavo', 100); -- Ecuador
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Centavo', 100); -- East Timor
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Centavo', 100); -- Ecuador
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Egyptian pound', 'LE', 'EGP', 'Piastre', 100); -- Egypt
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Bitcoin (as legal tender)', '₿', NULL, 'Satoshi', 100000000); -- El Salvador
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- El Salvador
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Central African CFA franc', 'Fr', 'XAF', 'Centime', 100); -- Equatorial Guinea
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Bitcoin (as legal tender)', '₿', NULL, 'Satoshi', 100000000); -- El Salvador
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- El Salvador
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Central African CFA franc', 'Fr', 'XAF', 'Centime', 100); -- Equatorial Guinea
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Eritrean nakfa', 'Nkf', 'ERN', 'Cent', 100); -- Eritrea
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Estonia
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Estonia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('South African rand', 'R', 'ZAR', 'Cent', 100); -- Eswatini
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Swazi lilangeni', 'L or E (pl.)', 'SZL', 'Cent', 100); -- Eswatini
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Ethiopian birr', 'Br', 'ETB', 'Santim', 100); -- Ethiopia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Falkland Islands pound', '£', 'FKP', 'Penny', 100); -- Falkland Islands
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Danish krone', 'kr', 'DKK', 'Øre', 100); -- Faroe Islands
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Faroese króna', 'kr', NULL, 'Oyra', 100); -- Faroe Islands
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Danish krone', 'kr', 'DKK', 'Øre', 100); -- Faroe Islands
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Faroese króna', 'kr', NULL, 'Oyra', 100); -- Faroe Islands
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Fijian dollar', '$', 'FJD', 'Cent', 100); -- Fiji
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Sentti', 100); -- Finland
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- France
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Sentti', 100); -- Finland
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- France
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('CFP franc', 'Fr', 'XPF', 'Centime', 100); -- French Polynesia
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Central African CFA franc', 'Fr', 'XAF', 'Centime', 100); -- Gabon
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Central African CFA franc', 'Fr', 'XAF', 'Centime', 100); -- Gabon
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Gambian dalasi', 'D', 'GMD', 'Butut', 100); -- Gambia, The
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Georgian lari', '₾', 'GEL', 'Tetri', 100); -- Georgia
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Germany
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Germany
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Ghanaian cedi', '₵', 'GHS', 'Pesewa', 100); -- Ghana
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Gibraltar pound', '£', 'GIP', 'Penny', 100); -- Gibraltar
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Greece
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Danish krone', 'kr', 'DKK', 'Øre', 100); -- Greenland
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Eastern Caribbean dollar', '$', 'XCD', 'Cent', 100); -- Grenada
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Greece
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Danish krone', 'kr', 'DKK', 'Øre', 100); -- Greenland
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Eastern Caribbean dollar', '$', 'XCD', 'Cent', 100); -- Grenada
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Guatemalan quetzal', 'Q', 'GTQ', 'Centavo', 100); -- Guatemala
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Guernsey pound', '£', NULL, 'Penny', 100); -- Guernsey
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Guernsey pound', '£', NULL, 'Penny', 100); -- Guernsey
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sterling', '£', 'GBP', 'Penny', 100); -- Guernsey
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Guinean franc', 'Fr', 'GNF', 'Centime', 100); -- Guinea
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('West African CFA franc', 'Fr', 'XOF', 'Centime', 100); -- Guinea-Bissau
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('West African CFA franc', 'Fr', 'XOF', 'Centime', 100); -- Guinea-Bissau
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Guyanese dollar', '$', 'GYD', 'Cent', 100); -- Guyana
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Haitian gourde', 'G', 'HTG', 'Centime', 100); -- Haiti
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Honduran lempira', 'L', 'HNL', 'Centavo', 100); -- Honduras
@@ -894,53 +890,53 @@ INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) 
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Indonesian rupiah', 'Rp', 'IDR', 'Sen', 100); -- Indonesia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Iranian rial', 'Rl or Rls (pl.)', 'IRR', 'Rial', 1); -- Iran
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Iraqi dinar', 'ID', 'IQD', 'Fils', 1000); -- Iraq
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Ireland
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Manx pound', '£', NULL, 'Penny', 100); -- Isle of Man
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Ireland
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Manx pound', '£', NULL, 'Penny', 100); -- Isle of Man
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sterling', '£', 'GBP', 'Penny', 100); -- Isle of Man
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Israeli new shekel', '₪', 'ILS', 'Agora', 100); -- Israel
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Italy
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Italy
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Jamaican dollar', '$', 'JMD', 'Cent', 100); -- Jamaica
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Japanese yen', '¥', 'JPY', 'Sen', 100); -- Japan
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Jersey pound', '£', NULL, 'Penny', 100); -- Jersey
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Jersey pound', '£', NULL, 'Penny', 100); -- Jersey
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sterling', '£', 'GBP', 'Penny', 100); -- Jersey
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Jordanian dinar', 'JD', 'JOD', 'Piastre', 100); -- Jordan
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Kazakhstani tenge', '₸', 'KZT', 'Tıyn', 100); -- Kazakhstan
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Kenyan shilling', 'Sh or Shs (pl.)', 'KES', 'Cent', 100); -- Kenya
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Australian dollar', '$', 'AUD', 'Cent', 100); -- Kiribati
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Kiribati dollar', '$', NULL, 'Cent', 100); -- Kiribati
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Kiribati dollar', '$', NULL, 'Cent', 100); -- Kiribati
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('North Korean won', '₩', 'KPW', 'Chon', 100); -- Korea, North
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('South Korean won', '₩', 'KRW', 'Jeon', 100); -- Korea, South
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Kosovo
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Kosovo
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Kuwaiti dinar', 'KD', 'KWD', 'Fils', 1000); -- Kuwait
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Kyrgyz som', 'som', 'KGS', 'Tyiyn', 100); -- Kyrgyzstan
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Lao kip', '₭', 'LAK', 'Att', 100); -- Laos
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Latvia
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Latvia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Lebanese pound', 'LL', 'LBP', 'Piastre', 100); -- Lebanon
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Lesotho loti', 'L or M (pl.)', 'LSL', 'Sente', 100); -- Lesotho
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('South African rand', 'R', 'ZAR', 'Cent', 100); -- Lesotho
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Liberian dollar', '$', 'LRD', 'Cent', 100); -- Liberia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Libyan dinar', 'LD', 'LYD', 'Dirham', 1000); -- Libya
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Swiss franc', 'Fr', 'CHF', 'Rappen', 100); -- Liechtenstein
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Lithuania
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Luxembourg
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Lithuania
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Luxembourg
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Hong Kong dollar', '$', 'HKD', 'Cent', 100); -- Macau
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Macanese pataca', 'MOP$', 'MOP', 'Avo', 100); -- Macau
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Malagasy ariary', 'Ar', 'MGA', 'Iraimbilanja', 5); -- Madagascar
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Malawian kwacha', 'K', 'MWK', 'Tambala', 100); -- Malawi
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Malaysian ringgit', 'RM', 'MYR', 'Sen', 100); -- Malaysia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Maldivian rufiyaa', 'Rf', 'MVR', 'Laari', 100); -- Maldives
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('West African CFA franc', 'Fr', 'XOF', 'Centime', 100); -- Mali
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Malta
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- Marshall Islands
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('West African CFA franc', 'Fr', 'XOF', 'Centime', 100); -- Mali
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Malta
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- Marshall Islands
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Mauritanian ouguiya', 'UM', 'MRU', 'Khoums', 5); -- Mauritania
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Mauritian rupee', 'Re or Rs (pl.)', 'MUR', 'Cent', 100); -- Mauritius
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Mexican peso', '$', 'MXN', 'Centavo', 100); -- Mexico
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- Micronesia
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- Micronesia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Moldovan leu', 'Leu or Lei (pl.)', 'MDL', 'Ban', 100); -- Moldova
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Monaco
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Monaco
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Mongolian tögrög', '₮', 'MNT', 'Möngö', 100); -- Mongolia
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Montenegro
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Eastern Caribbean dollar', '$', 'XCD', 'Cent', 100); -- Montserrat
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Montenegro
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Eastern Caribbean dollar', '$', 'XCD', 'Cent', 100); -- Montserrat
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Moroccan dirham', 'DH', 'MAD', 'Centime', 100); -- Morocco
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Mozambican metical', 'Mt', 'MZN', 'Centavo', 100); -- Mozambique
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Burmese kyat', 'K or Ks (pl.)', 'MMK', 'Pya', 100); -- Myanmar
@@ -948,65 +944,65 @@ INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) 
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('South African rand', 'R', 'ZAR', 'Cent', 100); -- Namibia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Australian dollar', '$', 'AUD', 'Cent', 100); -- Nauru
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Nepalese rupee', 'Re or Rs (pl.)', 'NPR', 'Paisa', 100); -- Nepal
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Netherlands
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Netherlands
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('CFP franc', 'Fr', 'XPF', 'Centime', 100); -- New Caledonia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('New Zealand dollar', '$', 'NZD', 'Cent', 100); -- New Zealand
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Nicaraguan córdoba', 'C$', 'NIO', 'Centavo', 100); -- Nicaragua
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('West African CFA franc', 'Fr', 'XOF', 'Centime', 100); -- Niger
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('West African CFA franc', 'Fr', 'XOF', 'Centime', 100); -- Niger
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Nigerian naira', '₦', 'NGN', 'Kobo', 100); -- Nigeria
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('New Zealand dollar', '$', 'NZD', 'Cent', 100); -- Niue
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Niue dollar', '$', NULL, 'Cent', 100); -- Niue
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Niue dollar', '$', NULL, 'Cent', 100); -- Niue
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Macedonian denar', 'DEN', 'MKD', 'Deni', 100); -- North Macedonia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Turkish lira', '₺', 'TRY', 'Kuruş', 100); -- Northern Cyprus
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Norwegian krone', 'kr', 'NOK', 'Øre', 100); -- Norway
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Omani rial', 'RO', 'OMR', 'Baisa', 1000); -- Oman
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Pakistani rupee', 'Re or Rs (pl.)', 'PKR', 'Paisa', 100); -- Pakistan
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- Palau
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- Palau
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Israeli new shekel', '₪', 'ILS', 'Agora', 100); -- Palestine
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Jordanian dinar', 'JD', 'JOD', 'Piastre', 100); -- Palestine
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Panamanian balboa', 'B/', 'PAB', 'Centésimo', 100); -- Panama
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- Panama
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- Panama
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Papua New Guinean kina', 'K', 'PGK', 'Toea', 100); -- Papua New Guinea
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Paraguayan guaraní', '₲', 'PYG', 'Céntimo', 100); -- Paraguay
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Peruvian sol', 'S/', 'PEN', 'Céntimo', 100); -- Peru
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Philippine peso', '₱', 'PHP', 'Sentimo', 100); -- Philippines
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('New Zealand dollar', '$', 'NZD', 'Cent', 100); -- Pitcairn Islands
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Pitcairn Islands dollar', '$', NULL, 'Cent', 100); -- Pitcairn Islands
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Pitcairn Islands dollar', '$', NULL, 'Cent', 100); -- Pitcairn Islands
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Polish złoty', 'zł', 'PLN', 'Grosz', 100); -- Poland
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Portugal
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Portugal
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Qatari riyal', 'QR', 'QAR', 'Dirham', 100); -- Qatar
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Romanian leu', 'Leu or Lei (pl.)', 'RON', 'Ban', 100); -- Romania
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Russian rouble', '₽', 'RUB', 'Kopeck', 100); -- Russia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Rwandan franc', 'Fr', 'RWF', 'Centime', 100); -- Rwanda
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- Saba
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- Saba
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Algerian dinar', 'DA', 'DZD', 'Santeem', 100); -- Sahrawi Republic
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Mauritanian ouguiya', 'UM', 'MRU', 'Khoums', 5); -- Sahrawi Republic
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Moroccan dirham', 'DH', 'MAD', 'Centime', 100); -- Sahrawi Republic
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sahrawi peseta', 'Pta or Pts (pl.)', NULL, 'Centime', 100); -- Sahrawi Republic
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sahrawi peseta', 'Pta or Pts (pl.)', NULL, 'Centime', 100); -- Sahrawi Republic
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Saint Helena pound', '£', 'SHP', 'Penny', 100); -- Saint Helena
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Eastern Caribbean dollar', '$', 'XCD', 'Cent', 100); -- Saint Kitts and Nevis
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Eastern Caribbean dollar', '$', 'XCD', 'Cent', 100); -- Saint Lucia
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Eastern Caribbean dollar', '$', 'XCD', 'Cent', 100); -- Saint Vincent and the Grenadines
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Eastern Caribbean dollar', '$', 'XCD', 'Cent', 100); -- Saint Kitts and Nevis
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Eastern Caribbean dollar', '$', 'XCD', 'Cent', 100); -- Saint Lucia
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Eastern Caribbean dollar', '$', 'XCD', 'Cent', 100); -- Saint Vincent and the Grenadines
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Samoan tālā', '$', 'WST', 'Sene', 100); -- Samoa
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- San Marino
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- San Marino
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Saudi riyal', 'Rl or Rls (pl.)', 'SAR', 'Halala', 100); -- Saudi Arabia
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('West African CFA franc', 'Fr', 'XOF', 'Centime', 100); -- Senegal
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('West African CFA franc', 'Fr', 'XOF', 'Centime', 100); -- Senegal
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Serbian dinar', 'DIN', 'RSD', 'Para', 100); -- Serbia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Seychellois rupee', 'Re or Rs (pl.)', 'SCR', 'Cent', 100); -- Seychelles
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sierra Leonean leone', 'Le', 'SLE', 'Cent', 100); -- Sierra Leone
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Brunei dollar', '$', 'BND', 'Sen', 100); -- Singapore
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Singapore dollar', '$', 'SGD', 'Cent', 100); -- Singapore
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- Sint Eustatius
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- Sint Eustatius
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Netherlands Antillean guilder', 'ƒ', 'ANG', 'Cent', 100); -- Sint Maarten
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Slovakia
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Slovenia
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Slovakia
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Slovenia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Solomon Islands dollar', '$', 'SBD', 'Cent', 100); -- Solomon Islands
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Somali shilling', 'Sh or Shs (pl.)', 'SOS', 'Cent', 100); -- Somalia
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Somaliland shilling', 'Sh or Shs (pl.)', NULL, 'Cent', 100); -- Somaliland
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Somaliland shilling', 'Sh or Shs (pl.)', NULL, 'Cent', 100); -- Somaliland
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('South African rand', 'R', 'ZAR', 'Cent', 100); -- South Africa
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Russian rouble', '₽', 'RUB', 'Kopeck', 100); -- South Ossetia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('South Sudanese pound', NULL, 'SSP', 'Piaster', 100); -- South Sudan
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Spain
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Spain
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sri Lankan rupee', 'Re or Rs (pl.)', 'LKR', 'Cent', 100); -- Sri Lanka
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sudanese pound', 'LS', 'SDG', 'Piastre', 100); -- Sudan
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Surinamese dollar', '$', 'SRD', 'Cent', 100); -- Suriname
@@ -1018,32 +1014,32 @@ INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) 
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Tajikistani somoni', 'SM', 'TJS', 'Diram', 100); -- Tajikistan
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Tanzanian shilling', 'Sh or Shs (pl.)', 'TZS', 'Cent', 100); -- Tanzania
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Thai baht', '฿', 'THB', 'Satang', 100); -- Thailand
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('West African CFA franc', 'Fr', 'XOF', 'Centime', 100); -- Togo
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('West African CFA franc', 'Fr', 'XOF', 'Centime', 100); -- Togo
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Tongan paʻanga', 'T$', 'TOP', 'Seniti', 100); -- Tonga
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Transnistrian ruble', 'р', NULL, 'Kopeck', 100); -- Transnistria
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Transnistrian ruble', 'р', NULL, 'Kopeck', 100); -- Transnistria
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Trinidad and Tobago dollar', '$', 'TTD', 'Cent', 100); -- Trinidad and Tobago
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Tunisian dinar', 'DT', 'TND', 'Millime', 1000); -- Tunisia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Turkish lira', '₺', 'TRY', 'Kuruş', 100); -- Turkey
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Turkmenistani manat', 'm', 'TMT', 'Tenge', 100); -- Turkmenistan
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- Turks and Caicos Islands
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- Turks and Caicos Islands
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Australian dollar', '$', 'AUD', 'Cent', 100); -- Tuvalu
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Tuvaluan dollar', '$', NULL, 'Cent', 100); -- Tuvalu
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Tuvaluan dollar', '$', NULL, 'Cent', 100); -- Tuvalu
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Ugandan shilling', 'Sh or Shs (pl.)', 'UGX', NULL, (none)); -- Uganda
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Ukrainian hryvnia', '₴', 'UAH', 'Kopeck', 100); -- Ukraine
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United Arab Emirates dirham', 'Dh or Dhs (pl.)', 'AED', 'Fils', 100); -- United Arab Emirates
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sterling', '£', 'GBP', 'Penny', 100); -- United Kingdom
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- United States
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- United States
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Uruguayan peso', '$', 'UYU', 'Centésimo', 100); -- Uruguay
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Uzbekistani soum', 'soum', 'UZS', 'Tiyin', 100); -- Uzbekistan
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Vanuatu vatu', 'VT', 'VUV', 'Cent', 100); -- Vanuatu
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Vatican City
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Vatican City
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Venezuelan digital bolívar', 'Bs.D', 'VED', 'Céntimo', 100); -- Venezuela
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Venezuelan sovereign bolívar', 'Bs.S', 'VES', 'Céntimo', 100); -- Venezuela
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Vietnamese đồng', '₫', 'VND', 'Hào', 10); -- Vietnam
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('CFP franc', 'Fr', 'XPF', 'Centime', 100); -- Wallis and Futuna
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Yemeni rial', 'Rl or Rls (pl.)', 'YER', 'Fils', 100); -- Yemen
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Zambian kwacha', 'K', 'ZMW', 'Ngwee', 100); -- Zambia
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('RTGS dollar', '$', NULL, 'Cent', 100); -- Zimbabwe
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('RTGS dollar', '$', NULL, 'Cent', 100); -- Zimbabwe
 
 -- currency_country
 
@@ -1086,186 +1082,187 @@ INSERT INTO religion VALUES ('Jewish');
 
 -- TODO: só america latina adicionar no religion_country
 -- Feito(v)
-INSERT INTO religion_country () VALUES ('Christian','Brazil', 183310550);
-INSERT INTO religion_country () VALUES ('Muslim','Brazil', 40000);
-INSERT INTO religion_country () VALUES ('Irreligion','Brazil', 15401050);
-INSERT INTO religion_country () VALUES ('Hindu','Brazil', 0);
-INSERT INTO religion_country () VALUES ('Buddhist','Brazil', 194950);
-INSERT INTO religion_country () VALUES ('Folk religion','Brazil', 5458600);
-INSERT INTO religion_country () VALUES ('Other religion','Brazil', 389900);
-INSERT INTO religion_country () VALUES ('Jewish','Brazil', 110000);
+INSERT INTO religion_country VALUES ('Christian','Brazil', 183310550);
+INSERT INTO religion_country VALUES ('Muslim','Brazil', 40000);
+INSERT INTO religion_country VALUES ('Irreligion','Brazil', 15401050);
+INSERT INTO religion_country VALUES ('Hindu','Brazil', 0);
+INSERT INTO religion_country VALUES ('Buddhist','Brazil', 194950);
+INSERT INTO religion_country VALUES ('Folk religion','Brazil', 5458600);
+INSERT INTO religion_country VALUES ('Other religion','Brazil', 389900);
+INSERT INTO religion_country VALUES ('Jewish','Brazil', 110000);
 
-INSERT INTO religion_country () VALUES ('Christian','Mexico', 107862420);
-INSERT INTO religion_country () VALUES ('Muslim','Mexico', 2000);
-INSERT INTO religion_country () VALUES ('Irreligion','Mexico', 5330740);
-INSERT INTO religion_country () VALUES ('Hindu','Mexico', 0);
-INSERT INTO religion_country () VALUES ('Buddhist','Mexico', 107000);
-INSERT INTO religion_country () VALUES ('Folk religion','Mexico', 70000);
-INSERT INTO religion_country () VALUES ('Other religion','Mexico', 20000);
-INSERT INTO religion_country () VALUES ('Jewish','Mexico', 70000);
+INSERT INTO religion_country VALUES ('Christian','Mexico', 107862420);
+INSERT INTO religion_country VALUES ('Muslim','Mexico', 2000);
+INSERT INTO religion_country VALUES ('Irreligion','Mexico', 5330740);
+INSERT INTO religion_country VALUES ('Hindu','Mexico', 0);
+INSERT INTO religion_country VALUES ('Buddhist','Mexico', 107000);
+INSERT INTO religion_country VALUES ('Folk religion','Mexico', 70000);
+INSERT INTO religion_country VALUES ('Other religion','Mexico', 20000);
+INSERT INTO religion_country VALUES ('Jewish','Mexico', 70000);
 
-INSERT INTO religion_country () VALUES ('Christian','Colombia', 41500000);
-INSERT INTO religion_country () VALUES ('Muslim','Colombia', 100000);
-INSERT INTO religion_country () VALUES ('Irreligion','Colombia', 5500140);
-INSERT INTO religion_country () VALUES ('Hindu','Colombia', 50.000);
-INSERT INTO religion_country () VALUES ('Buddhist','Colombia', 50.000);
-INSERT INTO religion_country () VALUES ('Folk religion','Colombia', 500320);
-INSERT INTO religion_country () VALUES ('Other religion','Colombia', 1.000000);
-INSERT INTO religion_country () VALUES ('Jewish','Colombia', 50.000);
+INSERT INTO religion_country VALUES ('Christian','Colombia', 41500000);
+INSERT INTO religion_country VALUES ('Muslim','Colombia', 100000);
+INSERT INTO religion_country VALUES ('Irreligion','Colombia', 5500140);
+INSERT INTO religion_country VALUES ('Hindu','Colombia', 50.000);
+INSERT INTO religion_country VALUES ('Buddhist','Colombia', 50.000);
+INSERT INTO religion_country VALUES ('Folk religion','Colombia', 500320);
+INSERT INTO religion_country VALUES ('Other religion','Colombia', 1.000000);
+INSERT INTO religion_country VALUES ('Jewish','Colombia', 50.000);
 
-INSERT INTO religion_country () VALUES ('Christian','Argentina', 34429320);
-INSERT INTO religion_country () VALUES ('Muslim','Argentina', 404100);
-INSERT INTO religion_country () VALUES ('Irreligion','Argentina', 4930020);
-INSERT INTO religion_country () VALUES ('Hindu','Argentina', 0);
-INSERT INTO religion_country () VALUES ('Buddhist','Argentina', 20000);
-INSERT INTO religion_country () VALUES ('Folk religion','Argentina', 323280);
-INSERT INTO religion_country () VALUES ('Other religion','Argentina', 121230);
-INSERT INTO religion_country () VALUES ('Jewish','Argentina', 202050);
+INSERT INTO religion_country VALUES ('Christian','Argentina', 34429320);
+INSERT INTO religion_country VALUES ('Muslim','Argentina', 404100);
+INSERT INTO religion_country VALUES ('Irreligion','Argentina', 4930020);
+INSERT INTO religion_country VALUES ('Hindu','Argentina', 0);
+INSERT INTO religion_country VALUES ('Buddhist','Argentina', 20000);
+INSERT INTO religion_country VALUES ('Folk religion','Argentina', 323280);
+INSERT INTO religion_country VALUES ('Other religion','Argentina', 121230);
+INSERT INTO religion_country VALUES ('Jewish','Argentina', 202050);
 
-INSERT INTO religion_country () VALUES ('Christian','Peru', 26753600);
-INSERT INTO religion_country () VALUES ('Muslim','Peru', 0);
-INSERT INTO religion_country () VALUES ('Irreligion','Peru', 1890200);
-INSERT INTO religion_country () VALUES ('Hindu','Peru', 0);
-INSERT INTO religion_country () VALUES ('Buddhist','Peru', 58160);
-INSERT INTO religion_country () VALUES ('Folk religion','Peru', 290800);
-INSERT INTO religion_country () VALUES ('Other religion','Peru', 87240);
-INSERT INTO religion_country () VALUES ('Jewish','Peru', 0);
+INSERT INTO religion_country VALUES ('Christian','Peru', 26753600);
+INSERT INTO religion_country VALUES ('Muslim','Peru', 0);
+INSERT INTO religion_country VALUES ('Irreligion','Peru', 1890200);
+INSERT INTO religion_country VALUES ('Hindu','Peru', 0);
+INSERT INTO religion_country VALUES ('Buddhist','Peru', 58160);
+INSERT INTO religion_country VALUES ('Folk religion','Peru', 290800);
+INSERT INTO religion_country VALUES ('Other religion','Peru', 87240);
+INSERT INTO religion_country VALUES ('Jewish','Peru', 0);
 
-INSERT INTO religion_country () VALUES ('Christian','Venezuela', 25879140);
-INSERT INTO religion_country () VALUES ('Muslim','Venezuela', 86940);
-INSERT INTO religion_country () VALUES ('Irreligion','Venezuela', 2898000);
-INSERT INTO religion_country () VALUES ('Hindu','Venezuela', 0);
-INSERT INTO religion_country () VALUES ('Buddhist','Venezuela', 0);
-INSERT INTO religion_country () VALUES ('Folk religion','Venezuela', 57960);
-INSERT INTO religion_country () VALUES ('Other religion','Venezuela', 20000);
-INSERT INTO religion_country () VALUES ('Jewish','Venezuela', 0);
+INSERT INTO religion_country VALUES ('Christian','Venezuela', 25879140);
+INSERT INTO religion_country VALUES ('Muslim','Venezuela', 86940);
+INSERT INTO religion_country VALUES ('Irreligion','Venezuela', 2898000);
+INSERT INTO religion_country VALUES ('Hindu','Venezuela', 0);
+INSERT INTO religion_country VALUES ('Buddhist','Venezuela', 0);
+INSERT INTO religion_country VALUES ('Folk religion','Venezuela', 57960);
+INSERT INTO religion_country VALUES ('Other religion','Venezuela', 20000);
+INSERT INTO religion_country VALUES ('Jewish','Venezuela', 0);
 
-INSERT INTO religion_country () VALUES ('Christian','Chile', 15296340);
-INSERT INTO religion_country () VALUES ('Muslim','Chile', 0);
-INSERT INTO religion_country () VALUES ('Irreligion','Chile', 1471460);
-INSERT INTO religion_country () VALUES ('Hindu','Chile', 0);
-INSERT INTO religion_country () VALUES ('Buddhist','Chile', 10000);
-INSERT INTO religion_country () VALUES ('Folk religion','Chile', 256650);
-INSERT INTO religion_country () VALUES ('Other religion','Chile', 34220);
-INSERT INTO religion_country () VALUES ('Jewish','Chile', 17110);
+INSERT INTO religion_country VALUES ('Christian','Chile', 15296340);
+INSERT INTO religion_country VALUES ('Muslim','Chile', 0);
+INSERT INTO religion_country VALUES ('Irreligion','Chile', 1471460);
+INSERT INTO religion_country VALUES ('Hindu','Chile', 0);
+INSERT INTO religion_country VALUES ('Buddhist','Chile', 10000);
+INSERT INTO religion_country VALUES ('Folk religion','Chile', 256650);
+INSERT INTO religion_country VALUES ('Other religion','Chile', 34220);
+INSERT INTO religion_country VALUES ('Jewish','Chile', 17110);
 
-INSERT INTO religion_country () VALUES ('Christian','Guatemala', 13699280);
-INSERT INTO religion_country () VALUES ('Muslim','Guatemala', 0);
-INSERT INTO religion_country () VALUES ('Irreligion','Guatemala', 589990);
-INSERT INTO religion_country () VALUES ('Hindu','Guatemala', 0);
-INSERT INTO religion_country () VALUES ('Buddhist','Guatemala', 0);
-INSERT INTO religion_country () VALUES ('Folk religion','Guatemala', 86340);
-INSERT INTO religion_country () VALUES ('Other religion','Guatemala', 10000);
-INSERT INTO religion_country () VALUES ('Jewish','Guatemala', 0);
+INSERT INTO religion_country VALUES ('Christian','Guatemala', 13699280);
+INSERT INTO religion_country VALUES ('Muslim','Guatemala', 0);
+INSERT INTO religion_country VALUES ('Irreligion','Guatemala', 589990);
+INSERT INTO religion_country VALUES ('Hindu','Guatemala', 0);
+INSERT INTO religion_country VALUES ('Buddhist','Guatemala', 0);
+INSERT INTO religion_country VALUES ('Folk religion','Guatemala', 86340);
+INSERT INTO religion_country VALUES ('Other religion','Guatemala', 10000);
+INSERT INTO religion_country VALUES ('Jewish','Guatemala', 0);
 
-INSERT INTO religion_country () VALUES ('Christian','Ecuador', 13606860);
-INSERT INTO religion_country () VALUES ('Muslim','Ecuador', 0);
-INSERT INTO religion_country () VALUES ('Irreligion','Ecuador', 795300);
-INSERT INTO religion_country () VALUES ('Hindu','Ecuador', 0);
-INSERT INTO religion_country () VALUES ('Buddhist','Ecuador', 0);
-INSERT INTO religion_country () VALUES ('Folk religion','Ecuador', 43380);
-INSERT INTO religion_country () VALUES ('Other religion','Ecuador', 0);
-INSERT INTO religion_country () VALUES ('Jewish','Ecuador', 0);
+INSERT INTO religion_country VALUES ('Christian','Ecuador', 13606860);
+INSERT INTO religion_country VALUES ('Muslim','Ecuador', 0);
+INSERT INTO religion_country VALUES ('Irreligion','Ecuador', 795300);
+INSERT INTO religion_country VALUES ('Hindu','Ecuador', 0);
+INSERT INTO religion_country VALUES ('Buddhist','Ecuador', 0);
+INSERT INTO religion_country VALUES ('Folk religion','Ecuador', 43380);
+INSERT INTO religion_country VALUES ('Other religion','Ecuador', 0);
+INSERT INTO religion_country VALUES ('Jewish','Ecuador', 0);
 
-INSERT INTO religion_country () VALUES ('Christian','Bolivia', 9324270);
-INSERT INTO religion_country () VALUES ('Muslim','Bolivia', 0);
-INSERT INTO religion_country () VALUES ('Irreligion','Bolivia', 407130);
-INSERT INTO religion_country () VALUES ('Hindu','Bolivia', 0);
-INSERT INTO religion_country () VALUES ('Buddhist','Bolivia', 0);
-INSERT INTO religion_country () VALUES ('Folk religion','Bolivia', 89470);
-INSERT INTO religion_country () VALUES ('Other religion','Bolivia', 99300);
-INSERT INTO religion_country () VALUES ('Jewish','Bolivia', 0);
+INSERT INTO religion_country VALUES ('Christian','Bolivia', 9324270);
+INSERT INTO religion_country VALUES ('Muslim','Bolivia', 0);
+INSERT INTO religion_country VALUES ('Irreligion','Bolivia', 407130);
+INSERT INTO religion_country VALUES ('Hindu','Bolivia', 0);
+INSERT INTO religion_country VALUES ('Buddhist','Bolivia', 0);
+INSERT INTO religion_country VALUES ('Folk religion','Bolivia', 89470);
+INSERT INTO religion_country VALUES ('Other religion','Bolivia', 99300);
+INSERT INTO religion_country VALUES ('Jewish','Bolivia', 0);
 
-INSERT INTO religion_country () VALUES ('Christian','Honduras', 6657600);
-INSERT INTO religion_country () VALUES ('Muslim','Honduras', 7600);
-INSERT INTO religion_country () VALUES ('Irreligion','Honduras', 798000);
-INSERT INTO religion_country () VALUES ('Hindu','Honduras', 0);
-INSERT INTO religion_country () VALUES ('Buddhist','Honduras', 7600);
-INSERT INTO religion_country () VALUES ('Folk religion','Honduras', 83600);
-INSERT INTO religion_country () VALUES ('Other religion','Honduras', 45600);
-INSERT INTO religion_country () VALUES ('Jewish','Honduras', 0);
+INSERT INTO religion_country VALUES ('Christian','Honduras', 6657600);
+INSERT INTO religion_country VALUES ('Muslim','Honduras', 7600);
+INSERT INTO religion_country VALUES ('Irreligion','Honduras', 798000);
+INSERT INTO religion_country VALUES ('Hindu','Honduras', 0);
+INSERT INTO religion_country VALUES ('Buddhist','Honduras', 7600);
+INSERT INTO religion_country VALUES ('Folk religion','Honduras', 83600);
+INSERT INTO religion_country VALUES ('Other religion','Honduras', 45600);
+INSERT INTO religion_country VALUES ('Jewish','Honduras', 0);
 
-INSERT INTO religion_country () VALUES ('Christian','Paraguay', 6250050);
-INSERT INTO religion_country () VALUES ('Muslim','Paraguay', 0);
-INSERT INTO religion_country () VALUES ('Irreligion','Paraguay', 70950);
-INSERT INTO religion_country () VALUES ('Hindu','Paraguay', 0);
-INSERT INTO religion_country () VALUES ('Buddhist','Paraguay', 0);
-INSERT INTO religion_country () VALUES ('Folk religion','Paraguay', 109650);
-INSERT INTO religion_country () VALUES ('Other religion','Paraguay', 12900);
-INSERT INTO religion_country () VALUES ('Jewish','Paraguay', 0);
+INSERT INTO religion_country VALUES ('Christian','Paraguay', 6250050);
+INSERT INTO religion_country VALUES ('Muslim','Paraguay', 0);
+INSERT INTO religion_country VALUES ('Irreligion','Paraguay', 70950);
+INSERT INTO religion_country VALUES ('Hindu','Paraguay', 0);
+INSERT INTO religion_country VALUES ('Buddhist','Paraguay', 0);
+INSERT INTO religion_country VALUES ('Folk religion','Paraguay', 109650);
+INSERT INTO religion_country VALUES ('Other religion','Paraguay', 12900);
+INSERT INTO religion_country VALUES ('Jewish','Paraguay', 0);
 
-INSERT INTO religion_country () VALUES ('Christian','Nicaragua', 4967820);
-INSERT INTO religion_country () VALUES ('Muslim','Nicaragua', 0);
-INSERT INTO religion_country () VALUES ('Irreligion','Nicaragua', 723750);
-INSERT INTO religion_country () VALUES ('Hindu','Nicaragua', 0);
-INSERT INTO religion_country () VALUES ('Buddhist','Nicaragua', 0);
-INSERT INTO religion_country () VALUES ('Folk religion','Nicaragua', 81060);
-INSERT INTO religion_country () VALUES ('Other religion','Nicaragua', 5790);
-INSERT INTO religion_country () VALUES ('Jewish','Nicaragua', 0);
+INSERT INTO religion_country VALUES ('Christian','Nicaragua', 4967820);
+INSERT INTO religion_country VALUES ('Muslim','Nicaragua', 0);
+INSERT INTO religion_country VALUES ('Irreligion','Nicaragua', 723750);
+INSERT INTO religion_country VALUES ('Hindu','Nicaragua', 0);
+INSERT INTO religion_country VALUES ('Buddhist','Nicaragua', 0);
+INSERT INTO religion_country VALUES ('Folk religion','Nicaragua', 81060);
+INSERT INTO religion_country VALUES ('Other religion','Nicaragua', 5790);
+INSERT INTO religion_country VALUES ('Jewish','Nicaragua', 0);
 
-INSERT INTO religion_country () VALUES ('Christian','El Salvador', 5459580);
-INSERT INTO religion_country () VALUES ('Muslim','El Salvador', 0);
-INSERT INTO religion_country () VALUES ('Irreligion','El Salvador', 680900);
-INSERT INTO religion_country () VALUES ('Hindu','El Salvador', 0);
-INSERT INTO religion_country () VALUES ('Buddhist','El Salvador', 0);
-INSERT INTO religion_country () VALUES ('Folk religion','El Salvador', 30950);
-INSERT INTO religion_country () VALUES ('Other religion','El Salvador', 18570);
-INSERT INTO religion_country () VALUES ('Jewish','El Salvador', 0);
+INSERT INTO religion_country VALUES ('Christian','El Salvador', 5459580);
+INSERT INTO religion_country VALUES ('Muslim','El Salvador', 0);
+INSERT INTO religion_country VALUES ('Irreligion','El Salvador', 680900);
+INSERT INTO religion_country VALUES ('Hindu','El Salvador', 0);
+INSERT INTO religion_country VALUES ('Buddhist','El Salvador', 0);
+INSERT INTO religion_country VALUES ('Folk religion','El Salvador', 30950);
+INSERT INTO religion_country VALUES ('Other religion','El Salvador', 18570);
+INSERT INTO religion_country VALUES ('Jewish','El Salvador', 0);
 
-INSERT INTO religion_country () VALUES ('Christian','Costa Rica', 4235940);
-INSERT INTO religion_country () VALUES ('Muslim','Costa Rica', 0);
-INSERT INTO religion_country () VALUES ('Irreligion','Costa Rica', 368140);
-INSERT INTO religion_country () VALUES ('Hindu','Costa Rica', 0);
-INSERT INTO religion_country () VALUES ('Buddhist','Costa Rica', 0);
-INSERT INTO religion_country () VALUES ('Folk religion','Costa Rica', 38280);
-INSERT INTO religion_country () VALUES ('Other religion','Costa Rica', 13980);
-INSERT INTO religion_country () VALUES ('Jewish','Costa Rica', 0);
+INSERT INTO religion_country VALUES ('Christian','Costa Rica', 4235940);
+INSERT INTO religion_country VALUES ('Muslim','Costa Rica', 0);
+INSERT INTO religion_country VALUES ('Irreligion','Costa Rica', 368140);
+INSERT INTO religion_country VALUES ('Hindu','Costa Rica', 0);
+INSERT INTO religion_country VALUES ('Buddhist','Costa Rica', 0);
+INSERT INTO religion_country VALUES ('Folk religion','Costa Rica', 38280);
+INSERT INTO religion_country VALUES ('Other religion','Costa Rica', 13980);
+INSERT INTO religion_country VALUES ('Jewish','Costa Rica', 0);
 
-INSERT INTO religion_country () VALUES ('Christian','Panama', 3273600);
-INSERT INTO religion_country () VALUES ('Muslim','Panama', 24640);
-INSERT INTO religion_country () VALUES ('Irreligion','Panama', 168960);
-INSERT INTO religion_country () VALUES ('Hindu','Panama', 0);
-INSERT INTO religion_country () VALUES ('Buddhist','Panama', 7040);
-INSERT INTO religion_country () VALUES ('Folk religion','Panama', 14080);
-INSERT INTO religion_country () VALUES ('Other religion','Panama', 14080);
-INSERT INTO religion_country () VALUES ('Jewish','Panama', 14080);
+INSERT INTO religion_country VALUES ('Christian','Panama', 3273600);
+INSERT INTO religion_country VALUES ('Muslim','Panama', 24640);
+INSERT INTO religion_country VALUES ('Irreligion','Panama', 168960);
+INSERT INTO religion_country VALUES ('Hindu','Panama', 0);
+INSERT INTO religion_country VALUES ('Buddhist','Panama', 7040);
+INSERT INTO religion_country VALUES ('Folk religion','Panama', 14080);
+INSERT INTO religion_country VALUES ('Other religion','Panama', 14080);
+INSERT INTO religion_country VALUES ('Jewish','Panama', 14080);
 
-INSERT INTO religion_country () VALUES ('Christian','Uruguay', 1951230);
-INSERT INTO religion_country () VALUES ('Muslim','Uruguay', 0);
-INSERT INTO religion_country () VALUES ('Irreligion','Uruguay', 1371590);
-INSERT INTO religion_country () VALUES ('Hindu','Uruguay', 0);
-INSERT INTO religion_country () VALUES ('Buddhist','Uruguay', 0);
-INSERT INTO religion_country () VALUES ('Folk religion','Uruguay', 26960);
-INSERT INTO religion_country () VALUES ('Other religion','Uruguay', 10110);
-INSERT INTO religion_country () VALUES ('Jewish','Uruguay', 10110);
+INSERT INTO religion_country VALUES ('Christian','Uruguay', 1951230);
+INSERT INTO religion_country VALUES ('Muslim','Uruguay', 0);
+INSERT INTO religion_country VALUES ('Irreligion','Uruguay', 1371590);
+INSERT INTO religion_country VALUES ('Hindu','Uruguay', 0);
+INSERT INTO religion_country VALUES ('Buddhist','Uruguay', 0);
+INSERT INTO religion_country VALUES ('Folk religion','Uruguay', 26960);
+INSERT INTO religion_country VALUES ('Other religion','Uruguay', 10110);
+INSERT INTO religion_country VALUES ('Jewish','Uruguay', 10110);
 
-INSERT INTO religion_country () VALUES ('Christian','Guyana', 495000);
-INSERT INTO religion_country () VALUES ('Muslim','Guyana', 48000);
-INSERT INTO religion_country () VALUES ('Irreligion','Guyana', 15000);
-INSERT INTO religion_country () VALUES ('Hindu','Guyana', 236750);
-INSERT INTO religion_country () VALUES ('Buddhist','Guyana', 0);
-INSERT INTO religion_country () VALUES ('Folk religion','Guyana', 1500);
-INSERT INTO religion_country () VALUES ('Other religion','Guyana', 4500);
-INSERT INTO religion_country () VALUES ('Jewish','Guyana', 0);
+INSERT INTO religion_country VALUES ('Christian','Guyana', 495000);
+INSERT INTO religion_country VALUES ('Muslim','Guyana', 48000);
+INSERT INTO religion_country VALUES ('Irreligion','Guyana', 15000);
+INSERT INTO religion_country VALUES ('Hindu','Guyana', 236750);
+INSERT INTO religion_country VALUES ('Buddhist','Guyana', 0);
+INSERT INTO religion_country VALUES ('Folk religion','Guyana', 1500);
+INSERT INTO religion_country VALUES ('Other religion','Guyana', 4500);
+INSERT INTO religion_country VALUES ('Jewish','Guyana', 0);
 
-INSERT INTO religion_country () VALUES ('Christian','Suriname', 268320);
-INSERT INTO religion_country () VALUES ('Muslim','Suriname', 79040);
-INSERT INTO religion_country () VALUES ('Irreligion','Suriname', 28080);
-INSERT INTO religion_country () VALUES ('Hindu','Suriname', 102960);
-INSERT INTO religion_country () VALUES ('Buddhist','Suriname', 3120);
-INSERT INTO religion_country () VALUES ('Folk religion','Suriname', 27560);
-INSERT INTO religion_country () VALUES ('Other religion','Suriname', 9360);
-INSERT INTO religion_country () VALUES ('Jewish','Suriname', 1040);
+INSERT INTO religion_country VALUES ('Christian','Suriname', 268320);
+INSERT INTO religion_country VALUES ('Muslim','Suriname', 79040);
+INSERT INTO religion_country VALUES ('Irreligion','Suriname', 28080);
+INSERT INTO religion_country VALUES ('Hindu','Suriname', 102960);
+INSERT INTO religion_country VALUES ('Buddhist','Suriname', 3120);
+INSERT INTO religion_country VALUES ('Folk religion','Suriname', 27560);
+INSERT INTO religion_country VALUES ('Other religion','Suriname', 9360);
+INSERT INTO religion_country VALUES ('Jewish','Suriname', 1040);
 
-INSERT INTO religion_country () VALUES ('Christian','Belize', 271560);
-INSERT INTO religion_country () VALUES ('Muslim','Belize', 310);
-INSERT INTO religion_country () VALUES ('Irreligion','Belize', 27590);
-INSERT INTO religion_country () VALUES ('Hindu','Belize', 620);
-INSERT INTO religion_country () VALUES ('Buddhist','Belize', 1550);
-INSERT INTO religion_country () VALUES ('Folk religion','Belize', 4650);
-INSERT INTO religion_country () VALUES ('Other religion','Belize', 310);
-INSERT INTO religion_country () VALUES ('Jewish','Belize', 3100);
+INSERT INTO religion_country VALUES ('Christian','Belize', 271560);
+INSERT INTO religion_country VALUES ('Muslim','Belize', 310);
+INSERT INTO religion_country VALUES ('Irreligion','Belize', 27590);
+INSERT INTO religion_country VALUES ('Hindu','Belize', 620);
+INSERT INTO religion_country VALUES ('Buddhist','Belize', 1550);
+INSERT INTO religion_country VALUES ('Folk religion','Belize', 4650);
+INSERT INTO religion_country VALUES ('Other religion','Belize', 310);
+INSERT INTO religion_country VALUES ('Jewish','Belize', 3100);
 
+/*
 INSERT INTO religion () VALUES (17237400, 100000, 973080, 0, 0, 801360, 0, 0); -- Angola
 INSERT INTO religion () VALUES (13778800, 7692300, 1038800, 0, 0, 646800, 529270, 0); -- Cameroon
 INSERT INTO religion () VALUES (3938000, 862000, 44000, 0, 0, 44000, 0, 0); -- Central African Republic
@@ -1723,3 +1720,4 @@ INSERT INTO gdp () VALUES ('Yemen', 27594);
 INSERT INTO gdp () VALUES ('Zambia', 27025);
 INSERT INTO gdp () VALUES ('Zanzibar', NULL);
 INSERT INTO gdp () VALUES ('Zimbabwe', 38280);
+*/
