@@ -46,3 +46,6 @@ SELECT
   SUM(population)
 FROM
   country;
+
+-- Selecione todos os tipos de governo listados
+SELECT DISTINCT goverment_type FROM head_of_state;
