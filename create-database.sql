@@ -877,7 +877,7 @@ INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) 
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Eastern Caribbean dollar', '$', 'XCD', 'Cent', 100); -- Grenada
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Guatemalan quetzal', 'Q', 'GTQ', 'Centavo', 100); -- Guatemala
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Guernsey pound', '£', NULL, 'Penny', 100); -- Guernsey
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sterling', '£', 'GBP', 'Penny', 100); -- Guernsey
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sterling', '£', 'GBP', 'Penny', 100); -- Guernsey
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Guinean franc', 'Fr', 'GNF', 'Centime', 100); -- Guinea
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('West African CFA franc', 'Fr', 'XOF', 'Centime', 100); -- Guinea-Bissau
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Guyanese dollar', '$', 'GYD', 'Cent', 100); -- Guyana
@@ -886,23 +886,23 @@ INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) 
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Hong Kong dollar', '$', 'HKD', 'Cent', 100); -- Hong Kong
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Hungarian forint', 'Ft', 'HUF', 'Fillér', 100); -- Hungary
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Icelandic króna', 'kr', 'ISK', 'Eyrir', 100); -- Iceland
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Indian rupee', '₹', 'INR', 'Paisa', 100); -- India
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Indian rupee', '₹', 'INR', 'Paisa', 100); -- India
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Indonesian rupiah', 'Rp', 'IDR', 'Sen', 100); -- Indonesia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Iranian rial', 'Rl or Rls (pl.)', 'IRR', 'Rial', 1); -- Iran
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Iraqi dinar', 'ID', 'IQD', 'Fils', 1000); -- Iraq
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Ireland
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Manx pound', '£', NULL, 'Penny', 100); -- Isle of Man
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sterling', '£', 'GBP', 'Penny', 100); -- Isle of Man
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sterling', '£', 'GBP', 'Penny', 100); -- Isle of Man
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Israeli new shekel', '₪', 'ILS', 'Agora', 100); -- Israel
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Italy
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Jamaican dollar', '$', 'JMD', 'Cent', 100); -- Jamaica
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Japanese yen', '¥', 'JPY', 'Sen', 100); -- Japan
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Jersey pound', '£', NULL, 'Penny', 100); -- Jersey
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sterling', '£', 'GBP', 'Penny', 100); -- Jersey
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sterling', '£', 'GBP', 'Penny', 100); -- Jersey
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Jordanian dinar', 'JD', 'JOD', 'Piastre', 100); -- Jordan
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Kazakhstani tenge', '₸', 'KZT', 'Tıyn', 100); -- Kazakhstan
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Kenyan shilling', 'Sh or Shs (pl.)', 'KES', 'Cent', 100); -- Kenya
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Australian dollar', '$', 'AUD', 'Cent', 100); -- Kiribati
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Australian dollar', '$', 'AUD', 'Cent', 100); -- Kiribati
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Kiribati dollar', '$', NULL, 'Cent', 100); -- Kiribati
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('North Korean won', '₩', 'KPW', 'Chon', 100); -- Korea, North
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('South Korean won', '₩', 'KRW', 'Jeon', 100); -- Korea, South
@@ -913,13 +913,13 @@ INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) 
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Latvia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Lebanese pound', 'LL', 'LBP', 'Piastre', 100); -- Lebanon
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Lesotho loti', 'L or M (pl.)', 'LSL', 'Sente', 100); -- Lesotho
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('South African rand', 'R', 'ZAR', 'Cent', 100); -- Lesotho
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('South African rand', 'R', 'ZAR', 'Cent', 100); -- Lesotho
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Liberian dollar', '$', 'LRD', 'Cent', 100); -- Liberia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Libyan dinar', 'LD', 'LYD', 'Dirham', 1000); -- Libya
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Swiss franc', 'Fr', 'CHF', 'Rappen', 100); -- Liechtenstein
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Lithuania
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Luxembourg
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Hong Kong dollar', '$', 'HKD', 'Cent', 100); -- Macau
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Hong Kong dollar', '$', 'HKD', 'Cent', 100); -- Macau
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Macanese pataca', 'MOP$', 'MOP', 'Avo', 100); -- Macau
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Malagasy ariary', 'Ar', 'MGA', 'Iraimbilanja', 5); -- Madagascar
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Malawian kwacha', 'K', 'MWK', 'Tambala', 100); -- Malawi
@@ -941,16 +941,16 @@ INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) 
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Mozambican metical', 'Mt', 'MZN', 'Centavo', 100); -- Mozambique
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Burmese kyat', 'K or Ks (pl.)', 'MMK', 'Pya', 100); -- Myanmar
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Namibian dollar', '$', 'NAD', 'Cent', 100); -- Namibia
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('South African rand', 'R', 'ZAR', 'Cent', 100); -- Namibia
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Australian dollar', '$', 'AUD', 'Cent', 100); -- Nauru
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('South African rand', 'R', 'ZAR', 'Cent', 100); -- Namibia
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Australian dollar', '$', 'AUD', 'Cent', 100); -- Nauru
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Nepalese rupee', 'Re or Rs (pl.)', 'NPR', 'Paisa', 100); -- Nepal
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Netherlands
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('CFP franc', 'Fr', 'XPF', 'Centime', 100); -- New Caledonia
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('New Zealand dollar', '$', 'NZD', 'Cent', 100); -- New Zealand
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('CFP franc', 'Fr', 'XPF', 'Centime', 100); -- New Caledonia
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('New Zealand dollar', '$', 'NZD', 'Cent', 100); -- New Zealand
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Nicaraguan córdoba', 'C$', 'NIO', 'Centavo', 100); -- Nicaragua
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('West African CFA franc', 'Fr', 'XOF', 'Centime', 100); -- Niger
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Nigerian naira', '₦', 'NGN', 'Kobo', 100); -- Nigeria
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('New Zealand dollar', '$', 'NZD', 'Cent', 100); -- Niue
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('New Zealand dollar', '$', 'NZD', 'Cent', 100); -- Niue
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Niue dollar', '$', NULL, 'Cent', 100); -- Niue
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Macedonian denar', 'DEN', 'MKD', 'Deni', 100); -- North Macedonia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Turkish lira', '₺', 'TRY', 'Kuruş', 100); -- Northern Cyprus
@@ -958,28 +958,28 @@ INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) 
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Omani rial', 'RO', 'OMR', 'Baisa', 1000); -- Oman
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Pakistani rupee', 'Re or Rs (pl.)', 'PKR', 'Paisa', 100); -- Pakistan
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- Palau
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Israeli new shekel', '₪', 'ILS', 'Agora', 100); -- Palestine
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Jordanian dinar', 'JD', 'JOD', 'Piastre', 100); -- Palestine
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Israeli new shekel', '₪', 'ILS', 'Agora', 100); -- Palestine
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Jordanian dinar', 'JD', 'JOD', 'Piastre', 100); -- Palestine
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Panamanian balboa', 'B/', 'PAB', 'Centésimo', 100); -- Panama
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- Panama
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Papua New Guinean kina', 'K', 'PGK', 'Toea', 100); -- Papua New Guinea
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Paraguayan guaraní', '₲', 'PYG', 'Céntimo', 100); -- Paraguay
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Peruvian sol', 'S/', 'PEN', 'Céntimo', 100); -- Peru
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Philippine peso', '₱', 'PHP', 'Sentimo', 100); -- Philippines
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('New Zealand dollar', '$', 'NZD', 'Cent', 100); -- Pitcairn Islands
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('New Zealand dollar', '$', 'NZD', 'Cent', 100); -- Pitcairn Islands
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Pitcairn Islands dollar', '$', NULL, 'Cent', 100); -- Pitcairn Islands
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Polish złoty', 'zł', 'PLN', 'Grosz', 100); -- Poland
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Portugal
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Qatari riyal', 'QR', 'QAR', 'Dirham', 100); -- Qatar
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Romanian leu', 'Leu or Lei (pl.)', 'RON', 'Ban', 100); -- Romania
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Russian rouble', '₽', 'RUB', 'Kopeck', 100); -- Russia
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Russian rouble', '₽', 'RUB', 'Kopeck', 100); -- Russia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Rwandan franc', 'Fr', 'RWF', 'Centime', 100); -- Rwanda
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- Saba
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Algerian dinar', 'DA', 'DZD', 'Santeem', 100); -- Sahrawi Republic
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Mauritanian ouguiya', 'UM', 'MRU', 'Khoums', 5); -- Sahrawi Republic
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Moroccan dirham', 'DH', 'MAD', 'Centime', 100); -- Sahrawi Republic
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Algerian dinar', 'DA', 'DZD', 'Santeem', 100); -- Sahrawi Republic
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Mauritanian ouguiya', 'UM', 'MRU', 'Khoums', 5); -- Sahrawi Republic
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Moroccan dirham', 'DH', 'MAD', 'Centime', 100); -- Sahrawi Republic
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sahrawi peseta', 'Pta or Pts (pl.)', NULL, 'Centime', 100); -- Sahrawi Republic
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Saint Helena pound', '£', 'SHP', 'Penny', 100); -- Saint Helena
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Saint Helena pound', '£', 'SHP', 'Penny', 100); -- Saint Helena
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Eastern Caribbean dollar', '$', 'XCD', 'Cent', 100); -- Saint Kitts and Nevis
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Eastern Caribbean dollar', '$', 'XCD', 'Cent', 100); -- Saint Lucia
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Eastern Caribbean dollar', '$', 'XCD', 'Cent', 100); -- Saint Vincent and the Grenadines
@@ -990,24 +990,24 @@ INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) 
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Serbian dinar', 'DIN', 'RSD', 'Para', 100); -- Serbia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Seychellois rupee', 'Re or Rs (pl.)', 'SCR', 'Cent', 100); -- Seychelles
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sierra Leonean leone', 'Le', 'SLE', 'Cent', 100); -- Sierra Leone
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Brunei dollar', '$', 'BND', 'Sen', 100); -- Singapore
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Singapore dollar', '$', 'SGD', 'Cent', 100); -- Singapore
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Brunei dollar', '$', 'BND', 'Sen', 100); -- Singapore
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Singapore dollar', '$', 'SGD', 'Cent', 100); -- Singapore
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- Sint Eustatius
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Netherlands Antillean guilder', 'ƒ', 'ANG', 'Cent', 100); -- Sint Maarten
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Netherlands Antillean guilder', 'ƒ', 'ANG', 'Cent', 100); -- Sint Maarten
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Slovakia
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Slovenia
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Solomon Islands dollar', '$', 'SBD', 'Cent', 100); -- Solomon Islands
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Somali shilling', 'Sh or Shs (pl.)', 'SOS', 'Cent', 100); -- Somalia
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Somaliland shilling', 'Sh or Shs (pl.)', NULL, 'Cent', 100); -- Somaliland
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('South African rand', 'R', 'ZAR', 'Cent', 100); -- South Africa
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Russian rouble', '₽', 'RUB', 'Kopeck', 100); -- South Ossetia
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('South Sudanese pound', NULL, 'SSP', 'Piaster', 100); -- South Sudan
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('South African rand', 'R', 'ZAR', 'Cent', 100); -- South Africa
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Russian rouble', '₽', 'RUB', 'Kopeck', 100); -- South Ossetia
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('South Sudanese pound', NULL, 'SSP', 'Piaster', 100); -- South Sudan
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Euro', '€', 'EUR', 'Cent', 100); -- Spain
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sri Lankan rupee', 'Re or Rs (pl.)', 'LKR', 'Cent', 100); -- Sri Lanka
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sudanese pound', 'LS', 'SDG', 'Piastre', 100); -- Sudan
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Surinamese dollar', '$', 'SRD', 'Cent', 100); -- Suriname
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Swedish krona', 'kr', 'SEK', 'Öre', 100); -- Sweden
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Swiss franc', 'Fr', 'CHF', 'Rappen', 100); -- Switzerland
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Swiss franc', 'Fr', 'CHF', 'Rappen', 100); -- Switzerland
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Syrian pound', 'LS', 'SYP', 'Piastre', 100); -- Syria
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('São Tomé and Príncipe dobra', 'Db', 'STN', 'Cêntimo', 100); -- São Tomé and Príncipe
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('New Taiwan dollar', '$', 'TWD', 'Cent', 100); -- Taiwan, Republic of China
@@ -1019,15 +1019,15 @@ INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) 
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Transnistrian ruble', 'р', NULL, 'Kopeck', 100); -- Transnistria
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Trinidad and Tobago dollar', '$', 'TTD', 'Cent', 100); -- Trinidad and Tobago
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Tunisian dinar', 'DT', 'TND', 'Millime', 1000); -- Tunisia
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Turkish lira', '₺', 'TRY', 'Kuruş', 100); -- Turkey
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Turkish lira', '₺', 'TRY', 'Kuruş', 100); -- Turkey
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Turkmenistani manat', 'm', 'TMT', 'Tenge', 100); -- Turkmenistan
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- Turks and Caicos Islands
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Australian dollar', '$', 'AUD', 'Cent', 100); -- Tuvalu
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Australian dollar', '$', 'AUD', 'Cent', 100); -- Tuvalu
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Tuvaluan dollar', '$', NULL, 'Cent', 100); -- Tuvalu
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Ugandan shilling', 'Sh or Shs (pl.)', 'UGX', NULL, (none)); -- Uganda
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Ugandan shilling', 'Sh or Shs (pl.)', 'UGX', NULL, NULL); -- Uganda
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Ukrainian hryvnia', '₴', 'UAH', 'Kopeck', 100); -- Ukraine
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United Arab Emirates dirham', 'Dh or Dhs (pl.)', 'AED', 'Fils', 100); -- United Arab Emirates
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sterling', '£', 'GBP', 'Penny', 100); -- United Kingdom
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Sterling', '£', 'GBP', 'Penny', 100); -- United Kingdom
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('United States dollar', '$', 'USD', 'Cent', 100); -- United States
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Uruguayan peso', '$', 'UYU', 'Centésimo', 100); -- Uruguay
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Uzbekistani soum', 'soum', 'UZS', 'Tiyin', 100); -- Uzbekistan
@@ -1036,7 +1036,7 @@ INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) 
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Venezuelan digital bolívar', 'Bs.D', 'VED', 'Céntimo', 100); -- Venezuela
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Venezuelan sovereign bolívar', 'Bs.S', 'VES', 'Céntimo', 100); -- Venezuela
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Vietnamese đồng', '₫', 'VND', 'Hào', 10); -- Vietnam
-INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('CFP franc', 'Fr', 'XPF', 'Centime', 100); -- Wallis and Futuna
+--INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('CFP franc', 'Fr', 'XPF', 'Centime', 100); -- Wallis and Futuna
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Yemeni rial', 'Rl or Rls (pl.)', 'YER', 'Fils', 100); -- Yemen
 INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('Zambian kwacha', 'K', 'ZMW', 'Ngwee', 100); -- Zambia
 --INSERT INTO currency (name, symbol, iso_code, fractional_unit, number_to_basic) VALUES ('RTGS dollar', '$', NULL, 'Cent', 100); -- Zimbabwe
