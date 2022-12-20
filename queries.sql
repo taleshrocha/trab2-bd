@@ -5,7 +5,7 @@ SELECT
 FROM
   country
 WHERE
-  gdp != NULL
+  gdp IS NOT NULL
 order BY
     gdp DESC
     LIMIT 10;
@@ -35,5 +35,23 @@ SELECT COUNT(*) num_paises, continent FROM country GROUP BY continent ORDER BY n
 -- Selecione cada presidente atual de cada país de todos os países.
 SELECT head_of_state FROM country WHERE head_of_state != 'NULL'; --Essa query está incompleta, desde que cada country só pode ter um head_of_state associado a ele, todos os head_of_state de country estão atuando no momento, independente de end_of_managment
 
--- Selecione a porcentagem de países que possuem como presidente atual alguém do sexo feminino. (Para testar essa query seria necessário preencher o campo sexo, além do problema citado anteriormente)
+-- Brayan Selecione a porcentagem de países que possuem como presidente atual alguém do sexo feminino. (Para testar essa query seria necessário preencher o campo sexo, além do problema citado anteriormente)
 SELECT head_of_state.* FROM country INNER JOIN head_of_state ON head_of_state.name = country.head_of_state WHERE head_of_state != 'NULL' AND head_of_state.sex = 'F';
+
+-- Selecione a porcentagem de países que possuem como presidente atual alguém do sexo feminino. (Para testar essa query seria necessário preencher o campo sexo, além do problema citado anteriormente)
+SELECT 
+  head_of_state.* 
+FROM 
+  country 
+  INNER JOIN 
+  head_of_state 
+  ON head_of_state.name = country.head_of_state 
+WHERE 
+  head_of_state != 'NULL' 
+  AND head_of_state.sex = 'F';
+
+-- Quantos pessoas existem no mundo?
+SELECT
+  SUM(population)
+FROM
+  country;

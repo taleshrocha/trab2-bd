@@ -554,8 +554,6 @@ INSERT INTO country (name, population, area, population_density, capital, contin
 INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Wallis and Futuna (France)', 11627, 142, 82, NULL, NULL);
 INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Western Sahara', 565581, 266000, 2, 'Laâyoune (declared)', NULL);
 --INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Western Sahara', 565581, 266000, 2, 'Tifariti (de facto)', NULL);
-INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('World (all land)', 7998420000, 148940000, 54, NULL, NULL);
-INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('World (excluding Antarctica)', 7998420000, 134740000, 59, NULL, NULL);
 --INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Yemen', 32981641, 527968, 62, 'Aden (de facto temporary)', 'Asia');
 INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Yemen', 32981641, 527968, 62, 'Sana''a (de jure)', 'Asia');
 INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Zambia', 19473125, 752612, 26, 'Lusaka', 'Africa');
