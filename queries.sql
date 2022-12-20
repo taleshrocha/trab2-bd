@@ -1,21 +1,23 @@
 -- Selecione os 10 países com maior PIB
 SELECT
-  C.name as name
-  C.gdp as gdp
+  name as name,
+  gdp as gdp
 FROM
-  country C
+  country
+WHERE
+  gdp != NULL
 order BY
-    gdp desc
+    gdp DESC
     LIMIT 10;
 
 -- Selecione os 10 países mais populosos do mundo.
 SELECT
-  C.name as name
+  C.name as name,
   C.population as population
 FROM
   country C
 order BY
-    population desc
+    population DESC
     LIMIT 10;
 
 -- Selecione a moeda mais usada entre os países.

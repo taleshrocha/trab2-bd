@@ -563,7 +563,7 @@ INSERT INTO country (name, population, area, population_density, capital, contin
 INSERT INTO country (name, population, area, population_density, capital, continent) VALUES ('Åland (Finland)', 30344, 1580, 19, NULL, NULL);
 
 UPDATE country SET gdp = 1894708, head_of_state = 'Jair Bolsonaro' WHERE name = 'Brazil';
-UPDATE country SET gdp = 1424533, head_of_state = 'Andrés Manuel López Obrador'WHERE name = 'Mexico';
+UPDATE country SET gdp = 1424533, head_of_state = 'Andrés Manuel López Obrador' WHERE name = 'Mexico';
 UPDATE country SET gdp = 342919, head_of_state = 'Gustavo Petro' WHERE name = 'Colombia';
 UPDATE country SET gdp = 630698, head_of_state = 'Alberto Fernández' WHERE name = 'Argentina';
 UPDATE country SET gdp = 239333, head_of_state = 'Dina Boluarte' WHERE name = 'Peru';
@@ -582,6 +582,27 @@ UPDATE country SET gdp = 71161, head_of_state = 'Luis Lacalle Pou' WHERE name = 
 UPDATE country SET gdp = 14839, head_of_state = 'Irfaan Ali' WHERE name = 'Guyana';
 UPDATE country SET gdp = 3011, head_of_state = 'Chan Santokhi' WHERE name = 'Suriname';
 UPDATE country SET gdp = 2676, head_of_state = 'Dame Froyla Tzalam' WHERE name = 'Belize';
+
+UPDATE head_of_state SET sex = 'M' WHERE name = 'Jair Bolsonaro';
+UPDATE head_of_state SET sex = 'M' WHERE name = 'Andrés Manuel López Obrador';
+UPDATE head_of_state SET sex = 'M' WHERE name = 'Gustavo Petro';
+UPDATE head_of_state SET sex = 'M' WHERE name = 'Alberto Fernández';
+UPDATE head_of_state SET sex = 'F' WHERE name = 'Dina Boluarte';
+UPDATE head_of_state SET sex = 'M' WHERE name = 'Nicolás Maduro';
+UPDATE head_of_state SET sex = 'M' WHERE name = 'Gabriel Boric';
+UPDATE head_of_state SET sex = 'M' WHERE name = 'Alejandro Giammattei';
+UPDATE head_of_state SET sex = 'M' WHERE name = 'Guillermo Lasso';
+UPDATE head_of_state SET sex = 'M' WHERE name = 'Luis Arce';
+UPDATE head_of_state SET sex = 'F' WHERE name = 'Xiomara Castro';
+UPDATE head_of_state SET sex = 'M' WHERE name = 'Mario Abdo Benítez';
+UPDATE head_of_state SET sex = 'M' WHERE name = 'Daniel Ortega';
+UPDATE head_of_state SET sex = 'M' WHERE name = 'Nayib Bukele';
+UPDATE head_of_state SET sex = 'M' WHERE name = 'Rodrigo Chaves Robles';
+UPDATE head_of_state SET sex = 'M' WHERE name = 'Laurentino Cortizo';
+UPDATE head_of_state SET sex = 'M' WHERE name = 'Luis Lacalle Pou';
+UPDATE head_of_state SET sex = 'M' WHERE name = 'Irfaan Ali';
+UPDATE head_of_state SET sex = 'M' WHERE name = 'Chan Santokhi';
+UPDATE head_of_state SET sex = 'F' WHERE name = 'Dame Froyla Tzalam';
 
 -- language
 
